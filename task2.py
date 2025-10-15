@@ -92,3 +92,91 @@
 #                 f2 = (x or not(y)) == (w <= z)
 #                 if f2 == False:
 #                     print(x,y,w,z)
+
+# (¬x ≡ z) → (y ≡ (w ∨ x))
+# 16805
+# print("x y w z")
+# for x in range(2):
+#     for y in range(2):
+#         for w in range(2):
+#             for z in range(2):
+#                 if not(((not(x)) == z) <= (y == (w or x))):
+#                     print(x,y,w,z)
+
+# (x ≡ (y → z)) ∧ (y ≡ ¬(z → w))
+# 73828
+# print("x y z w")
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if ((x == (y <= z)) and (y == (not(z <= w)))):
+#                     print(x,y,z,w)
+
+# print("___________")
+
+# print("x y z w")
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if not((x == (y <= z)) and (y == (not(z <= w)))):
+#                     print(x,y,z,w)
+
+# F1  =  (x ∨¬ y) → (w ≡ z)
+# F2  =  (x ∨¬ y) ≡ (w → z)
+# №58469
+# print("x y z w")
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 f1 = (x or not(y)) <= (w == z)
+#                 f2 = (x or not(y)) == (w <= z)
+#                 if f1 == False and f2 == False:
+#                     print(x,y,z,w)
+
+# print("______________")
+
+# print('x y z w')
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 f1 = (x or not(y)) <= (w == z)
+#                 f2 = (x or not(y)) == (w <= z)
+#                 if f1 == False:
+#                     print(x,y,z,w)
+
+# print ("_____________")
+
+# print("x y z w ")
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 f1 = (x or not(y)) <= (w == z)
+#                 f2 = (x or not(y)) == (w <= z)
+#                 if f2 == False:
+#                     print(x,y,z,w)
+        
+# (x ∨ ¬y) ∧ ¬(y ≡ z) ∧ ¬w
+# № 57409
+# print("x y z w")
+# for x in range(2):
+#     for y in range(2):
+#         for z in range(2):
+#             for w in range(2):
+#                 if (x or not(y)) and not(y == z) and not(w):
+#                     print(x,y,z,w) 
+
+# (x ∧ y ∧¬z) ≡ (y ∨ z ∨ ¬w)
+# № 27001
+print("x y z w")
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            for w in range(2):
+                if (x and y and not(z)) == (y or z or not(w)):
+                    print(x,y,z,w)
+                    

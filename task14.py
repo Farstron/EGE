@@ -351,8 +351,8 @@ def Tok(num,k):
     return res 
 
 for x in range(401, 10000):
-    num = (Tok(16**560 + 16**120 - x, 16).count("0"))
-    if num == 442:
+    count_0 = (Tok(16**560 + 16**120 - x, 16).count("0"))
+    if count_0 == 442:
         print(x)
         break 
         

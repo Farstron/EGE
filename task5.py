@@ -74,7 +74,7 @@ for num in range(100, 1000):
     c = num % 10
     s1 = a + b 
     s2 = b + c
-    res = int(str(max(s1,s2)) + str(min(s1,s2)))
+    res = int(str(min(s1,s2)) + str(max(s1,s2)))
     if res == 714:
         print(num)
         break

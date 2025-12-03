@@ -226,6 +226,36 @@
 
 При каком наименьшем числе N > 104 в результате работы алгоритма получится число, кратное 4?
 '''
+# def Tok(num,k):
+#     alf ={0:'0', 1:'1', 2:'2'}
+#     res=''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res
+
+# def step2(num: str):
+#     count_0 = num.count("0")
+#     count_1 = num.count('1')
+#     if count_0 == count_1:
+#         num += num[-1]
+#     else:
+#         if count_0 < count_1:
+#             num += '0'  
+#         else: 
+#             num += '1'
+#     return num
+
+# for N in range(105, 109):
+#     R = Tok(N,2)
+#     R = step2(R)
+#     R = step2(R)
+#     R = step2(R)
+#     R = int(R,2)
+#     if R % 4 == 0:
+#         print(N)
+#         break
+
 def Tok(num,k):
     alf ={0:'0', 1:'1', 2:'2'}
     res=''
@@ -234,18 +264,56 @@ def Tok(num,k):
         num //= k
     return res
 
-for N in range(2, 1000):
+# for N in range(105, 109):
+#     R = Tok(N,2)
+#     count_0 = R.count("0")
+#     count_1 = R.count('1')
+#     if count_0 == count_1:
+#         R += R[-1]
+#     else:
+#         if count_0 < count_1:
+#             R += '0'  
+#         else: 
+#             R += '1'
+    
+#     count_0 = R.count("0")
+#     count_1 = R.count('1')
+#     if count_0 == count_1:
+#         R += R[-1]
+#     else:
+#         if count_0 < count_1:
+#             R += '0'  
+#         else: 
+#             R += '1'
+
+#     count_0 = R.count("0")
+#     count_1 = R.count('1')
+#     if count_0 == count_1:
+#         R += R[-1]
+#     else:
+#         if count_0 < count_1:
+#             R += '0'  
+#         else: 
+#             R += '1'
+#     R = int(R,2)
+#     if R % 4 == 0:
+#         print(N)
+#         break
+
+for N in range(105, 109):
     R = Tok(N,2)
-    count_0 = R.count("0")
-    count_1 = R.count('1')
-    if count_0 == count_1:
-        R += R[-1]
-    else:
-        if count_0 < count_1:
-            R += '0'  
-        else: 
-            R += '1'
-R = int(R,2)
-if N > 104 and N // 4:
-    print(N)
+    for i in range(3):
+        count_0 = R.count("0")
+        count_1 = R.count('1')
+        if count_0 == count_1:
+            R += R[-1]
+        else:
+            if count_0 < count_1:
+                R += '0'  
+            else: 
+                R += '1'
+    R = int(R,2)
+    if R % 4 == 0:
+        print(N)
+        break
 #  107

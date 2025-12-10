@@ -300,20 +300,20 @@ def Tok(num,k):
 #         print(N)
 #         break
 
-for N in range(105, 109):
-    R = Tok(N,2)
-    for i in range(3):
-        count_0 = R.count("0")
-        count_1 = R.count('1')
-        if count_0 == count_1:
-            R += R[-1]
-        else:
-            if count_0 < count_1:
-                R += '0'  
-            else: 
-                R += '1'
-    R = int(R,2)
-    if R % 4 == 0:
-        print(N)
-        break
-#  107
+# for N in range(105, 109):
+#     R = Tok(N,2)
+#     for i in range(3):
+#         count_0 = R.count("0")
+#         count_1 = R.count('1')
+#         if count_0 == count_1:
+#             R += R[-1]
+#         else:
+#             if count_0 < count_1:
+#                 R += '0'  
+#             else: 
+#                 R += '1'
+#     R = int(R,2)
+#     if R % 4 == 0:
+#         print(N)
+#         break
+# #  107

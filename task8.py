@@ -186,3 +186,5 @@ from itertools import permutations as PE
 #     if (el in "ИЮ" == 2 ):
 #         c =+ 1
 # print(c)
+
+# print(int("31020", 4)+1)

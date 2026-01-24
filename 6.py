@@ -111,22 +111,6 @@
 # for x in range(0, 15):
 #     for y in range(0, 15):
 #         t.goto(x*l, y*l)
-#         t.dot(4)
-# t.done()
-
-# import turtle as t 
-# t.speed(100)
-# t.left(90)
-# l = 40
-# t.left(15)
-# for i in range(7):
-#     t.left(30)
-#     t.forward(10*l)
-#     t.left(60)
-# t.up()
-# for x in range(-15,2):
-#     for y in range(-10,10):
-#         t.goto(x*l, y*l)
 #         t.dot(5)
 # t.done()
 

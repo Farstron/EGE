@@ -145,7 +145,7 @@ def DEL(n,m):
 for A in range(1000, 0, -1):
     f = True
     for x in range(1000):
-        if not( (DEL(120, A)) and ((DEL(x, 36)) <= (not(DEL(x, A)) <= (not(DEL(x, 45))  ) ) ) ):
+        if not(DEL(120, A) and (DEL(x, 36) <= ((not DEL(x, A)) <= (not DEL(x, 45))))):
             f = False
             break
     if f:

@@ -142,6 +142,7 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #         return True
 #     return False
 
+<<<<<<< HEAD
 # for A in range(1000, 0, -1):
 #     f = True
 #     for x in range(1000):
@@ -151,3 +152,14 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #     if f:
 #         print(A)
 #         break
+=======
+for A in range(1000, 0, -1):
+    f = True
+    for x in range(1000):
+        if not(DEL(120, A) and (DEL(x, 36) <= ((not DEL(x, A)) <= (not DEL(x, 45))))):
+            f = False
+            break
+    if f:
+        print(A)
+        break
+>>>>>>> 7a915b1aaae4b90641db0e1f6b1f46e78fda5197

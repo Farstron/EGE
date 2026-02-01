@@ -137,17 +137,17 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 тождественно истинна (то есть принимает значение 1 при любом натуральном значении переменной x)?
 '''
 
-def DEL(n,m):
-    if n % m == 0:
-        return True
-    return False
+# def DEL(n,m):
+#     if n % m == 0:
+#         return True
+#     return False
 
-for A in range(1000, 0, -1):
-    f = True
-    for x in range(1000):
-        if not( (DEL(120, A)) and ((DEL(x, 36)) <= (not(DEL(x, A)) <= (not(DEL(x, 45))  ) ) ) ):
-            f = False
-            break
-    if f:
-        print(A)
-        break
+# for A in range(1000, 0, -1):
+#     f = True
+#     for x in range(1000):
+#         if not (DEL(120, A) and (DEL(x, 36) <= ((not DEL(x, A)) <= (not DEL(x, 45))))):
+#             f = False
+#             break
+#     if f:
+#         print(A)
+#         break

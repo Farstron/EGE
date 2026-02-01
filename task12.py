@@ -229,4 +229,4 @@ for x in range(100):
             nc = s.count('1') + s.count("2")*2 + s.count('3')*3
         if s.count('1') == 40 and s.count("2") == 40:
             print(y)
-            break
+            break  

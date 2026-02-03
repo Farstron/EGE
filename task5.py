@@ -332,26 +332,44 @@
 Результат работы алгоритма R=1.
 При каком наименьшем N в результате работы алгоритма получится R= 5?
 '''
-def Tok(num,k):
-    alf = {0:'0', 1:'1', 2:'2', 3:'3'}
-    res=''
-    while num != 0:
-        res = alf[num % k] + res
-        num //= k
-    return res 
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1', 2:'2', 3:'3'}
+#     res=''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res 
 
-for N in range(2, 100000):
-    R =Tok(N,2)
-    c1 = 0
-    c0 = 0
-    for i in range(0, len(R)):
-        if (i+1) % 2 == 0 and R[i] == "1":
-            c1 += 1
-        elif (i+1) % 2 == 1 and R[i] == "0":
-            c0 += 1
-    R = abs(c0 - c1)
-    if R == 5:
-        print(N)
-        break
+# for N in range(2, 100000):
+#     R =Tok(N,2)
+#     c1 = 0
+#     c0 = 0
+#     for i in range(0, len(R)):
+#         if (i+1) % 2 == 0 and R[i] == "1":
+#             c1 += 1
+#         elif (i+1) % 2 == 1 and R[i] == "0":
+#             c0 += 1
+#     R = abs(c0 - c1)
+#     if R == 5:
+#         print(N)
+#         break
 
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1', 2:'2', 3:'3'}
+#     res=''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //=k 
+#     return res
+
+# for N in range(1,100000):
+#     R = Tok(N,2)
+#     s = sum(int(d) for d in R)
+#     if s % 2 == 0:
+#         R = '11' + (R + '00')[2:]
+#     else:
+#         R = '10' + (R + '01')[2:]
+#     if int(R,2) > 96: 
+#         print(int(N))
+#         break
 

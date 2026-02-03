@@ -115,29 +115,29 @@
 # t.done()
 
 
-import turtle as t 
-t.speed(100)
-t.left(90)
-l = 12
-for i in range(5):
-    t.forward(35*l)
-    t.right(90)
-    t.forward(24*l)
-    t.right(90)
-t.up()
-t.right(90)
-t.forward(7*l)
-t.right(90)
-t.forward(5*l)
-t.down()
-for i in range(5):
-    t.right(90)
-    t.forward(20*l)
-    t.right(90)
-    t.forward(36*l)
-t.up()
-for x in range(0,50):
-    for y in range(-10,50):
-        t.goto(x*l, y*l)
-        t.dot(5)
-t.done()
+# import turtle as t 
+# t.speed(100)
+# t.left(90)
+# l = 12
+# for i in range(5):
+#     t.forward(35*l)
+#     t.right(90)
+#     t.forward(24*l)
+#     t.right(90)
+# t.up()
+# t.right(90)
+# t.forward(7*l)
+# t.right(90)
+# t.forward(5*l)
+# t.down()
+# for i in range(5):
+#     t.right(90)
+#     t.forward(20*l)
+#     t.right(90)
+#     t.forward(36*l)
+# t.up()
+# for x in range(0,50):
+#     for y in range(-10,50):
+#         t.goto(x*l, y*l)
+#         t.dot(5)
+# t.done()

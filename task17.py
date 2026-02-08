@@ -41,24 +41,24 @@
 В ответе запишите два числа: сначала количество найденных троек, затем максимальную величину суммы элементов этих троек.
 """
 
-F = [int(s) for s in open("task17/17 (1).txt")]
-M = max([x for x in F if x % 1000 == 832])
-res = []
-for i in range(len(F)-2):
-    tri = [F[i], F[i+1], F[i+2]]
-    c4 = 0
-    for el in tri:
-        if el // 1000 in range(1,10): c4+= 1
-    if c4 > 0 and c4 != 3: 
-        k5 = 0 
-        k3 = 0 
-        for el in tri:
-            if el % 5 == 0: k5+= 1
-            if el % 3 == 0: k3+= 1
-        if k5 > k3:
-            if sum(tri) > M:
-                res.append(sum(tri))
-print(len(res), max(res))
+# F = [int(s) for s in open("task17/17 (1).txt")]
+# M = max([x for x in F if x % 1000 == 832])
+# res = []
+# for i in range(len(F)-2):
+#     tri = [F[i], F[i+1], F[i+2]]
+#     c4 = 0
+#     for el in tri:
+#         if el // 1000 in range(1,10): c4+= 1
+#     if c4 > 0 and c4 != 3: 
+#         k5 = 0 
+#         k3 = 0 
+#         for el in tri:
+#             if el % 5 == 0: k5+= 1
+#             if el % 3 == 0: k3+= 1
+#         if k5 > k3:
+#             if sum(tri) > M:
+#                 res.append(sum(tri))
+# print(len(res), max(res))
 
 # F = [int(s) for s in open("task17/17 (1).txt")]
 # M = max([x for x in F if x % 1000 == 832])
@@ -75,3 +75,27 @@ print(len(res), max(res))
 #     if (c4 > 0 and c4 != 3) and (k5 > k3) and (sum(tri) > M):
 #         res.append(sum(tri))
 # print(len(res), max(res))
+
+
+"""
+Файл содержит последовательность неотрицательных целых чисел, не превышающих 10 000. Назовём парой два идущих подряд элемента последовательности. 
+Определите количество пар, в которых один из двух элементов делится на 3, а другой меньше среднего арифметического всех чётных элементов последовательности. 
+В ответе запишите два числа: сначала количество найденных пар, а затем  — максимальную сумму элементов таких пар.
+
+Например, в последовательности (1 3 8 9 4) есть две подходящие пары: (1 3) и (9 4), в ответе для этой последовательности надо записать числа 2 и 13.
+"""
+
+F =[int(s) for s in open("task17/17(da).txt")]
+M =[x for x in F if x % 2 == 0]
+D =sum(M) / len(M)
+res=[]
+for i in range(len(F)-1):
+    par= [F[i], F[i+1]]
+    k3 = 0
+    kd = 0 
+    for  el in par:
+        if el % 3 == 0: k3 +=1 
+        if el < D: kd += 1
+    if k3 == 1 and kd == 1:
+        res.append(sum(par))
+print(len(res), max(res))

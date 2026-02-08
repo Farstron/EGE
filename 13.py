@@ -21,3 +21,5 @@
 # print(bin(137)[2:])
 # print(bin(240)[2:])
 # print(int("10000000", 2))
+print(bin(128)[2:])
+print(bin(240)[2:])

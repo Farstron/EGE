@@ -95,7 +95,7 @@ for i in range(len(F)-1):
     kd = 0 
     for  el in par:
         if el % 3 == 0: k3 +=1 
-        if el < D: kd += 1
+        elif el < D: kd += 1
     if k3 == 1 and kd == 1:
         res.append(sum(par))
 print(len(res), max(res))

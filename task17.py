@@ -59,3 +59,19 @@ for i in range(len(F)-2):
             if sum(tri) > M:
                 res.append(sum(tri))
 print(len(res), max(res))
+
+F = [int(s) for s in open("task17/17 (1).txt")]
+M = max([x for x in F if x % 1000 == 832])
+res = []
+for i in range(len(F)-2):
+    tri = [F[i], F[i+1], F[i+2]]
+    c4 = 0
+    k5 = 0 
+    k3 = 0 
+    for el in tri:
+        if el // 1000 in range(1,10): c4+= 1
+        if el % 5 == 0: k5+= 1
+        if el % 3 == 0: k3+= 1
+    if (c4 > 0 and c4 != 3) and (k5 > k3) and (sum(tri) > M):
+        res.append(sum(tri))
+print(len(res), max(res))

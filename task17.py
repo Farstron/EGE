@@ -182,18 +182,32 @@
 #             res.append(sum(tri))
 # print(len(res),max(res))
 
-# F=[int(s) for s in open('task17/sd.txt')]
-# MAX = max(F) % 7
-# MIN = min(F) % 5
-# res = []
-# for i in range(len(F)-2):
-#     tri = [F[i],F[i+1],F[i+2]]
-#     c4 = [x//1000 in range(1,10) for x in tri]
-#     k5 = [x%5 for x in tri]
-#     k7 = [x%7 for x in tri]
-#     if True in c4 and k5.count(MIN) <= 1 and k7.count(MAX) >=2:
-#         res.append(sum(tri)) 
-# print(len(res),max(res))
+F=[int(s) for s in open('task17/sd.txt')]
+MAX = max(F) % 7
+MIN = min(F) % 5
+res = []
+for i in range(len(F)-2):
+    tri = [F[i],F[i+1],F[i+2]]
+    c4 = [x//1000 in range(1,10) for x in tri]
+    k5 = [x%5 for x in tri]
+    k7 = [x%7 for x in tri]
+    if True in c4 and k5.count(MIN) <= 1 and k7.count(MAX) >=2:
+        res.append(sum(tri)) 
+print(len(res),max(res))
+
+F=[int(s) for s in open('task17/sd.txt')]
+MAX = max(F) % 7
+MIN = min(F) % 5
+res = []
+for i in range(len(F)-2):
+    tri = [F[i],F[i+1],F[i+2]]
+    c4 = any([x//1000 in range(1,10) for x in tri])
+    k5 = sum(1 for x in tri if x % 5 == MIN) <= 1
+    k7 = sum(1 for x in tri if x % 7 == MAX) >= 2
+    if c4 and k5 and k7:
+        res.append(sum(tri)) 
+print(len(res),max(res))
+
 
 
 '''
@@ -207,12 +221,12 @@
 
 В ответе запишите два числа: сначала количество найденных четвёрок, затем максимальную величину суммы элементов этих четвёрок.
 '''
-F = [int(s) for s in open('task17/z.txt')]
-M = max([x for x in F if x % 1000 == 562])
-res = []
-for i in range(len(F)-3):
-    chet = [F[i], F[i+1], F[i+2], F[i+3]]
-    c5 = 0
-    for el in chet:
-        if el // 10000 in range(1,10): c5+=1
-    if c5 >= 1 and c5 != 2 
+# F = [int(s) for s in open('task17/z.txt')]
+# M = max([x for x in F if x % 1000 == 562])
+# res = []
+# for i in range(len(F)-3):
+#     chet = [F[i], F[i+1], F[i+2], F[i+3]]
+#     c5 = 0
+#     for el in chet:
+#         if el // 10000 in range(1,10): c5+=1
+#     if c5 >= 1 and c5 != 2 

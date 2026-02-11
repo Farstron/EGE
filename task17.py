@@ -163,21 +163,34 @@
 В ответе запишите два числа: сначала количество найденных троек, затем максимальную величину суммы элементов этих троек.
 '''
 
-F=[int(s) for s in open('task17/sd.txt')]
-M=max([x for x in F])
-N=min([x for x in F])
-res = []
-for i in range(len(F)-2):
-    tri = [F[i],F[i+1],F[i+2]]
-    c4 = 0
-    for el in tri:
-        if el // 1000 in range(1,10): c4+=1
-        if c4 > 0: 
-            k3 = 0
-            k2 = 0
-            for el in tri:
-                if el % 5 == N % 5: k3+=1
-                if el % 7 == M % 7: k2+=1
-            if k3 <= 1 and k2 >= 2:
-                res.append(sum(tri))
-print(len(res),max(res))
+# F=[int(s) for s in open('task17/sd.txt')]
+# M = max(F)
+# N = min(F)
+# res = []
+# for i in range(len(F)-2):
+#     tri = [F[i],F[i+1],F[i+2]]
+#     c4 = 0
+#     for el in tri:
+#         if el // 1000 in range(1,10): c4+=1
+#     if c4 > 0: 
+#         k3 = 0
+#         k2 = 0
+#         for el in tri:
+#             if el % 5 == N % 5: k3+=1
+#             if el % 7 == M % 7: k2+=1
+#         if k3 <= 1 and k2 >= 2:
+#             res.append(sum(tri))
+# print(len(res),max(res))
+
+# F=[int(s) for s in open('task17/sd.txt')]
+# MAX = max(F) % 7
+# MIN = min(F) % 5
+# res = []
+# for i in range(len(F)-2):
+#     tri = [F[i],F[i+1],F[i+2]]
+#     c4 = [x//1000 in range(1,10) for x in tri]
+#     k5 = [x%5 for x in tri]
+#     k7 = [x%7 for x in tri]
+#     if True in c4 and k5.count(MIN) <= 1 and k7.count(MAX) >=2:
+#         res.append(sum(tri)) 
+# print(len(res),max(res))

@@ -109,15 +109,30 @@
 В данной задаче под парой подразумевается два идущих подряд элемента последовательности.
 '''
 
-F=[int(s) for s in open('task17/171.txt')]
-M=min([x for x in F if x % 197 == 0])
-res=[]
+# F=[int(s) for s in open('task17/171.txt')]
+# M=min([x for x in F if x % 197 == 0])
+# res=[]
+# for i in range(len(F)-1):
+#     par=[F[i], F[i+1]]
+#     kmin = 0 
+#     kd = 0
+#     for el in par:
+#         if el % M == 0: kmin +=1
+#         if el % M != 0: kd +=1
+#         res.append(sum(par))
+# print(len(res), max(res))
+
+'''
+В файле содержится последовательность из 10 000 целых положительных чисел. Каждое число не превышает 10 000. 
+Определите и запишите в ответе сначала количество пар элементов последовательности, для которых произведение 
+элементов не кратно 14, затем максимальную из сумм элементов таких пар. 
+В данной задаче под парой подразумевается два различных элемента последовательности. Порядок элементов в паре не важен.
+'''
+F=[int(s) for s in open('task17/17_17.txt')]
+res = []
 for i in range(len(F)-1):
-    par=[F[i], F[i+1]]
-    kmin = 0 
-    kd = 0
-    for el in par:
-        if el % M == 0: kmin +=1
-        if el % M != 0: kd +=1
-        res.append(sum(par))
+    for k in range(i+1,len(F)):
+        par=[F[i], F[k]]
+        if (par[0] * par[1]) % 14 != 0:
+            res.append(par[0]+par[1])
 print(len(res), max(res))

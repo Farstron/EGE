@@ -207,12 +207,24 @@
 
 В ответе запишите два числа: сначала количество найденных четвёрок, затем максимальную величину суммы элементов этих четвёрок.
 '''
-F = [int(s) for s in open('task17/z.txt')]
-M = max([x for x in F if x % 1000 == 562])
-res = []
-for i in range(len(F)-3):
-    chet = [F[i], F[i+1], F[i+2], F[i+3]]
-    c5 = 0
-    for el in chet:
-        if el // 10000 in range(1,10): c5+=1
-    if c5 >= 1 and c5 != 2 
+# F = [int(s) for s in open('task17/z.txt')]
+# M = max([x for x in F if x % 1000 == 562])
+# res = []
+# for i in range(len(F)-3):
+#     chet = F[i:i+4]
+#     c5 = 0
+#     for el in chet:
+#         if el // 10000 in range(1,10): c5+=1
+#     if c5 >= 1 and c5 <= 2:
+#         k3 = 0
+#         k7 = 0
+#         for el in chet:
+#             if el % 3 == 0: k3+= 1 
+#             if el % 7 == 0: k7+= 1
+#         if k3 < k7:
+#             s= sum(chet)
+#             if 2*M > s > M:
+#                 res.append(sum(chet))
+# print(len(res), max(res))
+            
+

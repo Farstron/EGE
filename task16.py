@@ -61,27 +61,54 @@
 # print(F(3013,mem))
 
 
-#26493
-def G(n,memG):
-    if n in list(memG.keys()):
-        return memG[n]
-    if n >= 52000:
-        return n/10 + 30
-    return G(n+1,memG) - 1/2
+# #26493
+# def G(n,memG):
+#     if n in list(memG.keys()):
+#         return memG[n]
+#     if n >= 52000:
+#         return n/10 + 30
+#     return G(n+1,memG) - 1/2
 
-def F(n,memF, memG):
-    if n in list(memF.keys()):
-        return memF[n]
-    if n >= 67:
-        return n
-    return 3*(G(n-2, memG)-1)
+# def F(n,memF, memG):
+#     if n in list(memF.keys()):
+#         return memF[n]
+#     if n >= 67:
+#         return n
+#     return 3*(G(n-2, memG)-1)
 
-memG = {}
-for n in range(53000,0,-1):
-    memG[n] = G(n,memG)
+# memG = {}
+# for n in range(53000,0,-1):
+#     memG[n] = G(n,memG)
 
-memF = {}
-for n in range(10007,0,-1):
-    memF[n] = F(n,memF, memG)
+# memF = {}
+# for n in range(10007,0,-1):
+#     memF[n] = F(n,memF, memG)
 
-print(F(10007,memF,memG))
+# print(F(10007,memF,memG))
+
+'''25400'''
+def G(n,meG):
+    if n in list(meG.keys()):
+        return meG[n]
+    if n >= 28:
+        return G(n-5,meG) - 15
+    if n < 28:
+        return 3 * n - 4
+    
+def F(n,meF,meG):
+    if n in list(meF.keys()):
+        return meF[n]
+    if n < 31054:
+        return F(n + 4,meF,meG) + 3020
+    if n >= 31054:
+        return 3 * (G(n-2,meG)-15)
+    
+meG = {}
+for n in range(1,31200):
+    meG[n] = G(n,meG)
+
+meF = {}
+for n in range(31200,1,-1):
+    meF[n] = F(n,meF,meG)
+
+print(F(15,meF,meG))

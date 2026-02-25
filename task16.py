@@ -14,17 +14,48 @@
 
 # 24891
 
-def F(n, mem):
+# def F(n, mem):
+#     if n in list(mem.keys()):
+#         return mem[n]
+#     if n <= 10:
+#         return n    
+#     else: 
+#         return (n - 7 + F(n-21,mem))
+
+# mem = {}
+# for n in range(10, 185735,1):
+#     mem[n] = F(n,mem)
+#     print(f'{n}: {mem[n]}')
+
+# print((F(185734,mem) - F(185659,mem))/F(40,mem))
+
+
+'''23200'''
+
+# def F(n,mem): 
+#     if n in list(mem.keys()):
+#         return mem[n]
+#     if n < 10:
+#         return n
+#     if n >= 10:
+#         return 3*n + F(n - 3, mem)
+# mem = {}
+# for n in range(1, 6251):
+#     mem[n] = F(n,mem)
+# print((F(6250,mem) + 2 * F(6244,mem)) // F(6238,mem))
+
+
+'''19708'''
+def F(n,mem):
     if n in list(mem.keys()):
         return mem[n]
-    if n <= 10:
-        return n    
-    else: 
-        return (n - 7 + F(n-21,mem))
-
+    if n < 13:
+        return 13
+    if n>= 13 and n % 5 != 0:
+        return 13 - F(n-1,mem)
+    if n >= 13 and n % 5 == 0:
+        return 13 + F(n-1,mem)
 mem = {}
-for n in range(10, 185735,1):
+for n in range(1,3014):
     mem[n] = F(n,mem)
-    print(f'{n}: {mem[n]}')
-
-print((F(185734,mem) - F(185659,mem))/F(40,mem))
+print(F(3013,mem))

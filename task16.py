@@ -46,16 +46,42 @@
 
 
 '''19708'''
-def F(n,mem):
-    if n in list(mem.keys()):
-        return mem[n]
-    if n < 13:
-        return 13
-    if n>= 13 and n % 5 != 0:
-        return 13 - F(n-1,mem)
-    if n >= 13 and n % 5 == 0:
-        return 13 + F(n-1,mem)
-mem = {}
-for n in range(1,3014):
-    mem[n] = F(n,mem)
-print(F(3013,mem))
+# def F(n,mem):
+#     if n in list(mem.keys()):
+#         return mem[n]
+#     if n < 13:
+#         return 13
+#     if n>= 13 and n % 5 != 0:
+#         return 13 - F(n-1,mem)
+#     if n >= 13 and n % 5 == 0:
+#         return 13 + F(n-1,mem)
+# mem = {}
+# for n in range(1,3014):
+#     mem[n] = F(n,mem)
+# print(F(3013,mem))
+
+
+#26493
+def G(n,memG):
+    if n in list(memG.keys()):
+        return memG[n]
+    if n >= 52000:
+        return n/10 + 30
+    return G(n+1,memG) - 1/2
+
+def F(n,memF, memG):
+    if n in list(memF.keys()):
+        return memF[n]
+    if n >= 67:
+        return n
+    return 3*(G(n-2, memG)-1)
+
+memG = {}
+for n in range(53000,0,-1):
+    memG[n] = G(n,memG)
+
+memF = {}
+for n in range(10007,0,-1):
+    memF[n] = F(n,memF, memG)
+
+print(F(10007,memF,memG))

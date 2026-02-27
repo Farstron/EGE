@@ -87,28 +87,62 @@
 # print(F(10007,memF,memG))
 
 '''25400'''
-def G(n,meG):
-    if n in list(meG.keys()):
-        return meG[n]
-    if n >= 28:
-        return G(n-5,meG) - 15
-    if n < 28:
-        return 3 * n - 4
+# def G(n,meG):
+#     if n in list(meG.keys()):
+#         return meG[n]
+#     if n >= 28:
+#         return G(n-5,meG) - 15
+#     if n < 28:
+#         return 3 * n - 4
     
-def F(n,meF,meG):
-    if n in list(meF.keys()):
-        return meF[n]
-    if n < 31054:
-        return F(n + 4,meF,meG) + 3020
-    if n >= 31054:
-        return 3 * (G(n-2,meG)-15)
+# def F(n,meF,meG):
+#     if n in list(meF.keys()):
+#         return meF[n]
+#     if n < 31054:
+#         return F(n + 4,meF,meG) + 3020
+#     if n >= 31054:
+#         return 3 * (G(n-2,meG)-15)
     
-meG = {}
-for n in range(1,31200):
-    meG[n] = G(n,meG)
+# meG = {}
+# for n in range(1,31200):
+#     meG[n] = G(n,meG)
 
-meF = {}
-for n in range(31200,1,-1):
-    meF[n] = F(n,meF,meG)
+# meF = {}
+# for n in range(31200,1,-1):
+#     meF[n] = F(n,meF,meG)
 
-print(F(15,meF,meG))
+# print(F(15,meF,meG))
+
+# def G(n,meG):
+#     if n in list (meG.keys()):
+#         return meG[n]
+#     if n < 10:
+#         return 2 * n
+#     if n >= 10: 
+#         return G(n-2,meG) + 1
+    
+# def F(n,meF,meG):
+#     if n in list(meF.keys()):
+#         return meF[n]
+#     return 2 * (G(n-3,meG) + 8)
+
+# meG = {}
+# for n in range(1,15550):
+#     meG[n] = G(n,meG)
+
+# meF = {}
+# for n in range(1,15550):
+#     meF[n] = F(n,meF,meG)
+
+# print(F(15548,meF,meG))
+
+from functools import *
+@lru_cache(None)
+def f(n):
+    return 2*(g(n-3)+8)
+@lru_cache(None)
+def g(n):
+    if n<10: return 2*n
+    return g(n-2) +1
+for i in range(10,15548): g(i)
+print(f(15548))

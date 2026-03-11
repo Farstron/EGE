@@ -2,9 +2,9 @@ def step(h):
     k1, k2 = h
     return (
         (k1 + 1, k2),
-        (k1 * 4, k2),
+        (k1 * 2, k2),
         (k1, k2 + 1),
-        (k1, k2 * 4)
+        (k1, k2 * 2)
     )
 
 def game(h, max_moves, move=0, path=None, results=None):
@@ -43,18 +43,11 @@ def game(h, max_moves, move=0, path=None, results=None):
     return results
 
 res = []
-f = True
-for S in range(1,78):
-    if f:
-        results = game((4, S), 2)
-        for r in results:
-            if r['status'] == 'win' and r['winner'] == 'Ваня' and r['move'] == 2:
-                res.append(S)
-                print(S, r)
-                f = False
-                break
-    else:
-        break
-
-# alls = {el:res.count(el) for el in set(res)}
-# print(alls,'\n',[k for k, v in alls.items() if v == max(alls.values())])
+for S in range(1,70):
+    results = game((7, S), 3)
+    for r in results:
+        if r['status'] == 'win' and S == 60:
+            res.append(S)
+            print(S, r)
+alls = {el:res.count(el) for el in set(res)}
+print(alls,'\n',[k for k, v in alls.items() if v == max(alls.values())])

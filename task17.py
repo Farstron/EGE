@@ -208,3 +208,15 @@
 #         res.append(sum(tri)) 
 # print(len(res),max(res))
 
+F = [int(s) for s in open('task17/198.txt')]
+res =[]
+for i in range(len(F) - 2):
+    par = [F[i], F[i+1]]
+    c2 = 0
+    C2 = 0 
+    for el in par:
+        if el // 1000 in range(1,10):c2=+1
+    if c2 in par >= 1 and F[i] + F[i+1] <= max(par):
+        res.append(sum(par))
+print(len(res))
+    

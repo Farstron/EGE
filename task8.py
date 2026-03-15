@@ -199,4 +199,8 @@ for el in PR('13579B','02468AC','13579B','02468AC','13579B','02468AC','13579B'):
     el = ''.join(el)
     if el.count('5') >= 2:
         C += 1
-print(C*2)
+for el in PR('2468AC','13579B','02468AC','13579B','02468AC','13579B','02468AC'):
+    el = ''.join(el)
+    if el.count('5') >= 2:
+        C += 1
+print(C)

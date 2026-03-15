@@ -1,24 +1,30 @@
+'''
+Петя и Ваня решили поиграть. Перед ними лежат две кучи камней. Ребята ходят по очереди, 
+первый ход делает Петя. За один ход игрок может убрать из любой кучи два камня или уменьшить 
+количество камней в большей куче в два раза (с округлением в большую сторону).
+
+Например, пусть в одной куче 8, а в другой 11 камней; эту позицию мы будем обозначать так: 
+(8, 11). За один ход из позиции (8, 11) можно получить любую из трёх позиций: (6, 11), (8, 9), (8, 6). 
+Игра завершается в тот момент, когда суммарное количество камней в кучах становится не более 33. 
+Победителем считается игрок, который сделал последний ход, то есть первым получил позицию, в которой в кучах будет 33 камня или меньше. 
+В начале игры в первой куче было 23 камня, во второй — S камней,  S>10.
+'''
+
 def step(h):
     k1, k2 = h
     return (
-        (k1 + 1, k2),
-        (k1 * 2, k2),
-        (k1, k2 + 1),
-        (k1, k2 * 2)
+        (k1 - 2, k2),# от условия
+        (k1, k2 - 2),# от условия
+        (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2) # от условия
     )
 
-def game(h, max_moves, move=0, path=None, results=None):
-    if path is None:
-        path = [h]
+def game(h, max_moves, w_s, move=0, results=None):
     if results is None:
         results = []
-
     # если уже победа
-    if sum(h) >= 77:
+    if sum(h) <= w_s: # от условия оператор
         winner = 'Петя' if move % 2 == 1 else 'Ваня'
         results.append({
-            'path': path,
-            'end': h,
             'status': 'win',
             'winner': winner,
             'move': move
@@ -28,8 +34,6 @@ def game(h, max_moves, move=0, path=None, results=None):
     # если достигли лимита ходов, но победы нет
     if move == max_moves:
         results.append({
-            'path': path,
-            'end': h,
             'status': 'no win',
             'winner': None,
             'move': move
@@ -38,16 +42,65 @@ def game(h, max_moves, move=0, path=None, results=None):
 
     # продолжаем игру
     for next_h in step(h):
-        game(next_h, max_moves, move + 1, path + [next_h], results)
+        game(next_h, max_moves, w_s, move + 1, results)
 
     return results
 
-res = []
-for S in range(1,70):
-    results = game((7, S), 3)
-    for r in results:
-        if r['status'] == 'win' and S == 60:
-            res.append(S)
-            print(S, r)
-alls = {el:res.count(el) for el in set(res)}
-print(alls,'\n',[k for k, v in alls.items() if v == max(alls.values())])
+# 19 задание
+'''
+Известно, что Ваня выиграл своим первым ходом после неудачного первого хода Пети.
+
+Укажите максимальное значение S, при котором такая ситуация возможна.
+'''
+f = True
+for S in range(200,10,-1): # от условия
+    if f:
+        res = game((23,S),2,33) # от условия аргументы
+        for el in res:
+            if el['status'] == 'win' and el['move'] == 2: # от условия
+                print(S)
+                f = False
+                break
+    else: break
+
+# 20
+'''
+Найдите минимальное и максимальное значения S, при которых у Пети есть выигрышная стратегия, причём одновременно выполняются два условия:
+
+Петя не может выиграть за один ход
+Петя может выиграть своим вторым ходом независимо от того, как будет ходить Ваня
+Найденные значения запишите в ответе в порядке возрастания.
+'''
+# S20 = {key:0 for key in range(10,100)}
+# for S in range(10,100): # от условия
+#         res = game((23,S),3,33) # от условия аргументы
+#         for el in res:
+#             if el['status'] == 'win' and el['move'] == 3: # от услови
+#                 S20[S] += 1
+
+# print(S20) 
+
+
+# 21
+'''
+Найдите максимальное значение S, при котором одновременно выполняются два условия:
+
+у Вани есть выигрышная стратегия, которая позволяет ему выиграть первым или вторым ходом при любой игре Пети
+у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом
+'''
+
+S21 = []
+for S in range(17,43): # от условия
+        res = game((23,S),4,33) # от условия аргументы
+        for el in res:
+            if (el['status'] == 'win' and el['move'] == 4) or (el['status'] == 'win' and el['move'] == 2): # от условия
+                S21.append(S)
+print({el:S21.count(el) for el in set(S21)})
+# print("______")
+# S21 = []
+# for S in range(200,10,-1): # от условия
+#         res = game((23,S),2,33) # от условия аргументы
+#         for el in res:
+#             if el['status'] == 'win' and el['move'] == 2: # от условия
+#                 S21.append(S)
+# print(set(S21))

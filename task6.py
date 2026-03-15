@@ -168,3 +168,18 @@
 #         t.dot(5)
 # t.done()        
 # 55
+
+import turtle as t
+t.speed = 100
+t.left = 90
+l = 30
+for i in range(42):
+    t.right(60)
+    t.forward(7*l)
+    t.right(60)
+t.up
+for x in range(-5,10):
+    for y in range(-10,1):
+        t.goto(x*l, y*l)
+        t.dot(5)
+t.done()

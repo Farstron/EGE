@@ -374,3 +374,22 @@
 #         break
 
 
+def Tok(num, k):
+    alf = {0:'0', 1:'1', 2:'2', 3:'3'}
+    res = ''
+    while num != 0:
+        res =alf[num % k] + res
+        num //=k
+    return  res
+
+minR = None
+for N in range(33,100):
+    R= Tok(N,2)
+    if N % 2 != 0: 
+        R = ('1' + R)[:-2] + '10'
+    else:
+        R = '10' + (R + '1')[2:]
+    r = int(R,2)
+    if minR is None or r < minR:
+        minR = r    
+print(minR)

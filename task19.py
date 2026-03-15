@@ -51,3 +51,4 @@ for S in range(1,70):
             print(S, r)
 alls = {el:res.count(el) for el in set(res)}
 print(alls,'\n',[k for k, v in alls.items() if v == max(alls.values())])
+

@@ -278,30 +278,33 @@ q1	λ, S, q1	0, S, q1	1, L, q1
 
 После выполнения программы на ленте осталось ровно 343 нуля. Определите максимально возможное число нулей в исходной последовательности.
 '''
-T = {'L':-1, 'R':1, 'N':0, 'S':2000}
+# T = {'L':-1, 'R':1, 'N':0, 'S':2000}
 
-D = {'q0':{
-            'Y':['Y','L','q1']
-      },
-      'q1':{
-            'Y':['Y','S','q1'],
-            '1':['0','S','q1'],
-            '0':['1','L','q1']
-      }
-}
-from itertools import product as PR
-res = []
+# D = {'q0':{
+#             'Y':['Y','L','q1']
+#       },
+#       'q1':{
+#             'Y':['Y','S','q1'],
+#             '1':['0','S','q1'],
+#             '0':['1','L','q1']
+#       }
+# }
+# from itertools import product as PR
+# res = []
 
-for el in PR('01', repeat=1000):
-      s = ''.join(el)
-      s = 'Y' + s + 'Y'
-      s = list(s)
-      p = 'q0'
-      k = len(s) - 1
-      while T[D[p][s[k]][1]] != T['S']:
-            tp = p
-            ts = s[k]
-            s[k], k, p = D[tp][ts][0], k + T[D[tp][ts][1]], D[tp][ts][2]
-      if s.count('0') == 343:
-            res.append(''.join(el).count('0'))
-print(max(res))
+# for el in PR('01', repeat=1000):
+#       s = ''.join(el)
+#       s = 'Y' + s + 'Y'
+#       s = list(s)
+#       p = 'q0'
+#       k = len(s) - 1
+#       while T[D[p][s[k]][1]] != T['S']:
+#             tp = p
+#             ts = s[k]
+#             s[k], k, p = D[tp][ts][0], k + T[D[tp][ts][1]], D[tp][ts][2]
+#       if s.count('0') == 343:
+#             res.append(''.join(el).count('0'))
+# print(max(res))
+
+print(bin(347)[2:])
+print(int('101011100',2))

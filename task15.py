@@ -162,3 +162,15 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #     if f:
 #         print(A)
 #         break
+
+for A in range(100):
+    f = True
+    for x in range(100):
+        if f:
+            for y in range(100):
+                if ((-(x-2)**2 + 3 < y) or ((x-1)**2 +y**2 < 7) or (5*x + A > y)):
+                    f = False
+                    break
+        if f:
+            print(A)
+            break

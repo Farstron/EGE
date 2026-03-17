@@ -136,13 +136,24 @@
 
 # print(F(15548,meF,meG))
 
-from functools import *
-@lru_cache(None)
+# from functools import *
+# @lru_cache(None)
+# def f(n):
+#     return 2*(g(n-3)+8)
+# @lru_cache(None)
+# def g(n):
+#     if n<10: return 2*n
+#     return g(n-2) +1
+# for i in range(10,15548): g(i)
+# print(f(15548))
 def f(n):
-    return 2*(g(n-3)+8)
-@lru_cache(None)
-def g(n):
-    if n<10: return 2*n
-    return g(n-2) +1
-for i in range(10,15548): g(i)
-print(f(15548))
+    global count
+    count += 1
+    if n >= 1:
+        count += 1
+        f(n - 1)
+        f(n // 2)
+
+count = 0
+f(40)
+print(count)

@@ -10,70 +10,58 @@
 В начале игры в первой куче было 23 камня, во второй — S камней,  S>10.
 '''
 
-def step(h):
-    k1, k2 = h
-    return (
-        (k1 - 2, k2),# от условия
-        (k1, k2 - 2),# от условия
-        (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2) # от условия
-    )
+# def step(h):
+#     k1, k2 = h
+#     return (
+#         (k1 - 2, k2),# от условия
+#         (k1, k2 - 2),# от условия
+#         (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2) # от условия
+#     )
 
-def game(h, max_moves, w_s, move=0, results=None):
-    if results is None:
-        results = []
-    # если уже победа
-    if sum(h) <= w_s: # от условия оператор
-        winner = 'Петя' if move % 2 == 1 else 'Ваня'
-        results.append({
-            'status': 'win',
-            'winner': winner,
-            'move': move
-        })
-        return results
+# def game(h, max_moves, w_s, move=0, results=None):
+#     if results is None:
+#         results = []
+#     # если уже победа
+#     if sum(h) <= w_s: # от условия оператор
+#         winner = 'Петя' if move % 2 == 1 else 'Ваня'
+#         results.append({
+#             'status': 'win',
+#             'winner': winner,
+#             'move': move
+#         })
+#         return results
 
-    # если достигли лимита ходов, но победы нет
-    if move == max_moves:
-        results.append({
-            'status': 'no win',
-            'winner': None,
-            'move': move
-        })
-        return results
+#     # если достигли лимита ходов, но победы нет
+#     if move == max_moves:
+#         results.append({
+#             'status': 'no win',
+#             'winner': None,
+#             'move': move
+#         })
+#         return results
 
-    # продолжаем игру
-    for next_h in step(h):
-        game(next_h, max_moves, w_s, move + 1, results)
+#     # продолжаем игру
+#     for next_h in step(h):
+#         game(next_h, max_moves, w_s, move + 1, results)
 
-    return results
+#     return results
 
-<<<<<<< HEAD
-res = []
-for S in range(1,70):
-    results = game((7, S), 3)
-    for r in results:
-        if r['status'] == 'win' and S == 60:
-            res.append(S)
-            print(S, r)
-alls = {el:res.count(el) for el in set(res)}
-print(alls,'\n',[k for k, v in alls.items() if v == max(alls.values())])
-
-=======
 # 19 задание
 '''
 Известно, что Ваня выиграл своим первым ходом после неудачного первого хода Пети.
 
 Укажите максимальное значение S, при котором такая ситуация возможна.
 '''
-f = True
-for S in range(200,10,-1): # от условия
-    if f:
-        res = game((23,S),2,33) # от условия аргументы
-        for el in res:
-            if el['status'] == 'win' and el['move'] == 2: # от условия
-                print(S)
-                f = False
-                break
-    else: break
+# f = True
+# for S in range(200,10,-1): # от условия
+#     if f:
+#         res = game((23,S),2,33) # от условия аргументы
+#         for el in res:
+#             if el['status'] == 'win' and el['move'] == 2: # от условия
+#                 print(S)
+#                 f = False
+#                 break
+#     else: break
 
 # 20
 '''
@@ -101,13 +89,13 @@ for S in range(200,10,-1): # от условия
 у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом
 '''
 
-S21 = []
-for S in range(17,43): # от условия
-        res = game((23,S),4,33) # от условия аргументы
-        for el in res:
-            if (el['status'] == 'win' and el['move'] == 4) or (el['status'] == 'win' and el['move'] == 2): # от условия
-                S21.append(S)
-print({el:S21.count(el) for el in set(S21)})
+# S21 = []
+# for S in range(17,43): # от условия
+#         res = game((23,S),4,33) # от условия аргументы
+#         for el in res:
+#             if (el['status'] == 'win' and el['move'] == 4) or (el['status'] == 'win' and el['move'] == 2): # от условия
+#                 S21.append(S)
+# print({el:S21.count(el) for el in set(S21)})
 # print("______")
 # S21 = []
 # for S in range(200,10,-1): # от условия
@@ -116,4 +104,36 @@ print({el:S21.count(el) for el in set(S21)})
 #             if el['status'] == 'win' and el['move'] == 2: # от условия
 #                 S21.append(S)
 # print(set(S21))
->>>>>>> 3809426619acdcbf0b8632b2b941cd6fc2787eb2
+
+
+def step(h): 
+    k1, k2 =h
+    return((k1 - 2,k2), (k1, k2 - 2), (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2))
+def game(h, max_moves, w_s, move = 0, results=None): 
+    if results is None:
+        results = []
+    if sum(h) <= w_s:
+        winner = 'Петя' if move % 2 == 1 else 'Ваня'
+        results.append({'status' : 'win',
+                        'winner' : winner,
+                         'move' : move})
+        return results
+    if move == max_moves:
+        results.append({'status' : 'no win',
+                        'winner' : None,
+                        'move': move})
+        return results
+    for next_h in step(h):
+        game(next_h, max_moves, w_s, move +1 , results)
+    return results
+
+f= True
+for S in range(200,0,-1):
+    if f:
+        res = game((23,S),2, 33)
+        for el in res:
+            if el['status'] == 'win' and el['move'] == 2:
+                print(S)
+                f =False
+                break
+    else: break        

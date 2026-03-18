@@ -45,7 +45,36 @@
 #         game(next_h, max_moves, w_s, move + 1, results)
 
 #     return results
+def step(h):
+    k1, k2 = h
+    return (
+        (k1 - 2, k2),
+        (k1, k2 - 2),
+        (round(k1 / 2) if k1 >= k2 else k1,
+         round(k2 / 2) if k2 > k1 else k2)
+    )
 
+def f(h, m, w_s):
+    if sum(h) <= w_s:
+        return m % 2 == 0
+    if m == 0:
+        return False
+
+    moves = [f(x, m - 1, w_s) for x in step(h)]
+
+    # если сейчас ход игрока, который должен добиться победы
+    if m % 2 == 1:
+        return any(moves)
+    else:
+        return all(moves)
+
+ans19 = []
+
+for s in range(10, 1000):
+    if not f((23, s), 1, 33) and f((23, s), 2, 33):
+        ans19.append(s)
+
+print(max(ans19))
 # 19 задание
 '''
 Известно, что Ваня выиграл своим первым ходом после неудачного первого хода Пети.
@@ -106,34 +135,34 @@
 # print(set(S21))
 
 
-def step(h): 
-    k1, k2 =h
-    return((k1 - 2,k2), (k1, k2 - 2), (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2))
-def game(h, max_moves, w_s, move = 0, results=None): 
-    if results is None:
-        results = []
-    if sum(h) <= w_s:
-        winner = 'Петя' if move % 2 == 1 else 'Ваня'
-        results.append({'status' : 'win',
-                        'winner' : winner,
-                         'move' : move})
-        return results
-    if move == max_moves:
-        results.append({'status' : 'no win',
-                        'winner' : None,
-                        'move': move})
-        return results
-    for next_h in step(h):
-        game(next_h, max_moves, w_s, move +1 , results)
-    return results
+# def step(h): 
+#     k1, k2 =h
+#     return((k1 - 2,k2), (k1, k2 - 2), (round(k1/2) if k1 >= k2 else k1, round(k2/2) if k2 > k1 else k2))
+# def game(h, max_moves, w_s, move = 0, results=None): 
+#     if results is None:
+#         results = []
+#     if sum(h) <= w_s:
+#         winner = 'Петя' if move % 2 == 1 else 'Ваня'
+#         results.append({'status' : 'win',
+#                         'winner' : winner,
+#                          'move' : move})
+#         return results
+#     if move == max_moves:
+#         results.append({'status' : 'no win',
+#                         'winner' : None,
+#                         'move': move})
+#         return results
+#     for next_h in step(h):
+#         game(next_h, max_moves, w_s, move +1 , results)
+#     return results
 
-f= True
-for S in range(200,0,-1):
-    if f:
-        res = game((23,S),2, 33)
-        for el in res:
-            if el['status'] == 'win' and el['move'] == 2:
-                print(S)
-                f =False
-                break
-    else: break        
+# f= True
+# for S in range(200,0,-1):
+#     if f:
+#         res = game((23,S),2, 33)
+#         for el in res:
+#             if el['status'] == 'win' and el['move'] == 2:
+#                 print(S)
+#                 f =False
+#                 break
+#     else: break        

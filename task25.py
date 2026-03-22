@@ -54,7 +54,7 @@
 # for el in sorted(res):
 #     print(f'{res[el]}')
 
-
+# https://education.yandex.ru/ege/inf/task/933e19be-0afe-4b69-92ac-c92b5d4c11e4
 # 53*23*0
 # 53XXXXX230
 res = {}

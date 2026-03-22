@@ -40,12 +40,16 @@
 # 102157004 10^8
 # 1021570004 10^9
 res = {}
-for n1 in range(10):
-    for n2 in range(-1,1000):
-        if n2 > -1:
-            num = int(f'1{n1}2157{n2}4')
-        else:
-            num = int(f'1{n1}21574')
-        if num % 2024 == 0:
-            res[num] = num//2024
-print({el:res[el] for el in sorted(res)})
+for n in range(10):
+    for n1 in range(-1,10):
+        for n2 in range(-1,10):
+            for n3 in range(-1,10):
+                num = int(f'1{n}2157{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}4')
+                if num % 2024 == 0:
+                    res[num] = num//2024
+
+for el in sorted(res):
+    print(f'{el}')
+print("________", 1621570104 % 2024)
+for el in sorted(res):
+    print(f'{res[el]}')

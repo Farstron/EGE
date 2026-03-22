@@ -87,14 +87,39 @@
 
 # Сколько существует программ, для которых при исходном числе 16 результатом является число 48, если никакую из команд нельзя повторять дважды подряд?
 
+# import sys
+# sys.setrecursionlimit(10**6)
+
+# def f(start, stop, path = ''):
+#     if start > stop or 'AA' in path or 'BB' in path or 'CC' in path or 'DD' in path:
+#         return 0
+#     if start == stop:
+#         return 1
+#     return f(start + 1, stop, path + 'A') + f(start + 2, stop, path + 'B') + f(start + 4, stop, path + 'C') + f(start + 8, stop, path + 'D')
+
+# print(f(16,48))
+
+
+
+# A. Вычесть 5
+# B. Сделать кратным трём
+# C. Поделить на 3
+
+# Команда A уменьшает число на экране на 5.
+# Команда B может быть применена только к числам, не кратным трём, и уменьшает число на экране так, чтобы получилось ближайшее к исходному кратное трём число.
+# Команда C может быть применена только к числам, кратным трём, и уменьшает число на экране в три раза.
+
+# Программа для исполнителя — это последовательность команд.
+
+# Сколько программ преобразуют число 103 в число 24, и при этом их траектория вычислений содержит число 73?
+
 import sys
 sys.setrecursionlimit(10**6)
 
 def f(start, stop, path = ''):
-    if start > stop or 'AA' in path or 'BB' in path or 'CC' in path or 'DD' in path:
+    if start < stop:
         return 0
-    if start == stop:
+    if start == stop: 
         return 1
-    return f(start + 1, stop, path + 'A') + f(start + 2, stop, path + 'B') + f(start + 4, stop, path + 'C') + f(start + 8, stop, path + 'D')
-
-print(f(16,48))
+    return f(start - 5, stop, path + 'A') + f((start // 3 + 1)*3, stop, path + 'B') + f(start // 3, stop, path + 'C')
+print(f(103,73) * f(73,24))

@@ -57,35 +57,51 @@
 # https://education.yandex.ru/ege/inf/task/933e19be-0afe-4b69-92ac-c92b5d4c11e4
 # 53*23*0
 # 53XXXXX230
-res = {}
+# res = {}
 
-for n1 in range(-1,10):
-    for n2 in range(-1,10):
-        for n3 in range(-1,10):
-            for n4 in range(-1,10):
-                for n5 in range(-1,10):
-                    num1 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}230')
-                    if num1 % 2026 == 0:
-                        res[num1] = num1//2026
-                    num2 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}23{n5 if n5 > -1 else ''}0')
-                    if num2 % 2026 == 0:
-                        res[num2] = num2//2026
-                    num3 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}23{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
-                    if num3 % 2026 == 0:
-                        res[num3] = num3//2026
-                    num4 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}23{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
-                    if num4 % 2026 == 0:
-                        res[num4] = num4//2026
-                    num5 = int(f'53{n1 if n1 > -1 else ''}23{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
-                    if num5 % 2026 == 0:
-                        res[num5] = num5//2026
-                    num6 = int(f'5323{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
-                    if num6 % 2026 == 0:
-                        res[num6] = num6//2026
+# for n1 in range(-1,10):
+#     for n2 in range(-1,10):
+#         for n3 in range(-1,10):
+#             for n4 in range(-1,10):
+#                 for n5 in range(-1,10):
+#                     num1 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}230')
+#                     if num1 % 2026 == 0:
+#                         res[num1] = num1//2026
+#                     num2 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}23{n5 if n5 > -1 else ''}0')
+#                     if num2 % 2026 == 0:
+#                         res[num2] = num2//2026
+#                     num3 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}23{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
+#                     if num3 % 2026 == 0:
+#                         res[num3] = num3//2026
+#                     num4 = int(f'53{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}23{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
+#                     if num4 % 2026 == 0:
+#                         res[num4] = num4//2026
+#                     num5 = int(f'53{n1 if n1 > -1 else ''}23{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
+#                     if num5 % 2026 == 0:
+#                         res[num5] = num5//2026
+#                     num6 = int(f'5323{n1 if n1 > -1 else ''}{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}{n5 if n5 > -1 else ''}0')
+#                     if num6 % 2026 == 0:
+#                         res[num6] = num6//2026
 
 
-for i in range(6):
-    print(f'{sorted(res, reverse=True)[i]}')
-print("________")
-for i in range(5):
-    print(f'{res[sorted(res, reverse=True)[i]]}')
+# for i in range(6):
+#     print(f'{sorted(res, reverse=True)[i]}')
+# print("________")
+# for i in range(5):
+#     print(f'{res[sorted(res, reverse=True)[i]]}')
+
+
+
+# https://education.yandex.ru/ege/inf/task/83b21e05-822c-44b1-b785-f14418c83449
+res ={}
+L = list(range(200000000,-1,-1))
+for i  in range(len(L)):
+    if len(res) == 5:
+        break
+for n in range(10):
+    for n1 in range(-1,10):
+        for n2 in range(-1,10):
+            num = int(f'{n}2{n1 if n1> -1 else ''}4{n2 if n2 > -1 else ''}0')
+            num1 = int(f'1{n1 if n1> -1 else ''}7{n2 if n2 > -1 else ''}')
+            if num == res and num1 != res and res % 42 == 0:
+                print(res)

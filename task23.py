@@ -121,5 +121,7 @@ def f(start, stop, path = ''):
         return 0
     if start == stop: 
         return 1
-    return f(start - 5, stop, path + 'A') + f((start // 3 + 1)*3, stop, path + 'B') + f(start // 3, stop, path + 'C')
+    if start % 3 != 0:
+        return f(start - 5, stop, path + 'A') + f((round(start/3) - 1 )* 3, stop, path + 'B')
+    return f(start - 5, stop, path + 'A') + f(start // 3, stop, path + 'C')
 print(f(103,73) * f(73,24))

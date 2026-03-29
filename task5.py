@@ -374,22 +374,43 @@
 #         break
 
 
+# def Tok(num, k):
+#     alf = {0:'0', 1:'1', 2:'2', 3:'3'}
+#     res = ''
+#     while num != 0:
+#         res =alf[num % k] + res
+#         num //=k
+#     return  res
+
+# minR = None
+# for N in range(33,100):
+#     R= Tok(N,2)
+#     if N % 2 != 0: 
+#         R = ('1' + R)[:-2] + '10'
+#     else:
+#         R = '10' + (R + '1')[2:]
+#     r = int(R,2)
+#     if minR is None or r < minR:
+#         minR = r    
+# print(minR)
+
 def Tok(num, k):
-    alf = {0:'0', 1:'1', 2:'2', 3:'3'}
+    alf = {0:'0', 1:'1', 2:'2',3:'3', 4:'4',5:'5'}
     res = ''
     while num != 0:
-        res =alf[num % k] + res
-        num //=k
-    return  res
+        res = alf[num % k] + res
+        num //= k
+    return res   
 
-minR = None
-for N in range(33,100):
-    R= Tok(N,2)
-    if N % 2 != 0: 
-        R = ('1' + R)[:-2] + '10'
+for N in range(1000):
+    R = Tok(N,4)
+
+    if N % 4 == 0:
+        R = R + R[-2::]
     else:
-        R = '10' + (R + '1')[2:]
-    r = int(R,2)
-    if minR is None or r < minR:
-        minR = r    
-print(minR)
+        R = R + Tok((R.count('1')*1 + R.count('2')*2 + R.count('3')*3)*4,4)
+    r = 
+    if r % 2 != 0 and r > 211 and r % 3 == 0:
+        print(r)
+
+''' решить'''

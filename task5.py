@@ -413,4 +413,3 @@ for N in range(1000):
         res.append(r)
 print(min(res))
         
-''' решить'''

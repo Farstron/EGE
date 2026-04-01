@@ -401,16 +401,16 @@ def Tok(num, k):
         res = alf[num % k] + res
         num //= k
     return res   
-
+res = []
 for N in range(1000):
     R = Tok(N,4)
-
     if N % 4 == 0:
         R = R + R[-2::]
     else:
         R = R + Tok((R.count('1')*1 + R.count('2')*2 + R.count('3')*3)*4,4)
-    r = 
-    if r % 2 != 0 and r > 211 and r % 3 == 0:
-        print(r)
-
+    r = sum([int(R[i]) * 4 ** (len(R) - 1 - i) for i in range(len(R))])
+    if r % 2 == 0 and r > 211 and r % 3 == 0:
+        res.append(r)
+print(min(res))
+        
 ''' решить'''

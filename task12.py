@@ -306,5 +306,10 @@ q1	λ, S, q1	0, S, q1	1, L, q1
 #             res.append(''.join(el).count('0'))
 # print(max(res))
 
-print(bin(347)[2:])
-print(int('101011100',2))
+# print(bin(347)[2:])
+# print(int('101011100',2))
+
+
+#1000011
+print(bin(67))
+print(int('10111100',2))

@@ -394,22 +394,75 @@
 #         minR = r    
 # print(minR)
 
-def Tok(num, k):
-    alf = {0:'0', 1:'1', 2:'2',3:'3', 4:'4',5:'5'}
+# def Tok(num, k):
+#     alf = {0:'0', 1:'1', 2:'2',3:'3', 4:'4',5:'5'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res   
+# res = []
+# for N in range(1000):
+#     R = Tok(N,4)
+#     if N % 4 == 0:
+#         R = R + R[-2::]
+#     else:
+#         R = R + Tok((R.count('1')*1 + R.count('2')*2 + R.count('3')*3)*4,4)
+#     r = sum([int(R[i]) * 4 ** (len(R) - 1 - i) for i in range(len(R))])
+#     if r % 2 == 0 and r > 211 and r % 3 == 0:
+#         res.append(r)
+# print(min(res))
+
+# https://education.yandex.ru/ege/inf/task/b26dd0a6-1751-4197-8e93-df9df8849756
+
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1', 2:'2', 3:'3', 4:'4'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num//=k
+#     return res
+
+# res = []
+# for N in range(1,1000):
+#     R = Tok(N,3)
+#     if N % 3 ==0:
+#         R = R + R[-2::]
+#     else: 
+#         a = (N % 3) * 5
+#         R = R + Tok(a,3)
+#     t = int(R,3)
+#     if t > 150:
+#         res.append(t)
+# print(min(res))
+
+
+# https://education.yandex.ru/ege/inf/task/e1caaae9-6832-49dc-8204-4e5099de45f1
+
+# 111
+
+# https://education.yandex.ru/ege/inf/task/01488fc0-61e5-4122-9c73-a3cb09336b7a
+
+def Tok (num,k):
+    alf = {0:'0',1:'1', 2:'2', 3:'3'}
     res = ''
     while num != 0:
         res = alf[num % k] + res
-        num //= k
-    return res   
+        num //=k 
+    return res
 res = []
-for N in range(1000):
-    R = Tok(N,4)
+for N in range(1,1000):
+    R = Tok(N,2)
     if N % 4 == 0:
         R = R + R[-2::]
-    else:
-        R = R + Tok((R.count('1')*1 + R.count('2')*2 + R.count('3')*3)*4,4)
-    r = sum([int(R[i]) * 4 ** (len(R) - 1 - i) for i in range(len(R))])
-    if r % 2 == 0 and r > 211 and r % 3 == 0:
-        res.append(r)
+    else: 
+        r = Tok((N % 4),2)
+        R = R + r
+    if R and R[-1] == '0':
+        R = R[:-1]
+    a = int(R,2)
+    if a > 213: 
+        res.append(a) 
 print(min(res))
+    
         

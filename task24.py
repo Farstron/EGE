@@ -24,29 +24,35 @@
 # print(ml)
 
 
-with open('task24/24 (1).txt') as file:
+# with open('task24/24 (1).txt') as file:
+#     data = file.read()
+
+# word = 'ADENXY!'
+
+# ml = 0
+# i = 0
+# l = 0
+# k = 0
+# s = ''
+# while i in range(len(data)):
+#     if data[i] == word[k]:
+#         s += data[i]
+#     elif data[i] == word[k+1]:
+#         s += data[i]
+#         if k < len(word) - 2:
+#             k += 1
+#         else:
+#             k = 0
+#     else:
+
+#         ml = max(ml,len(s)) 
+#         l = 0
+#         k = 0
+#     i += 1
+# print(ml)
+
+
+with open('task24/24(2).txt') as file:
     data = file.read()
 
-word = 'ADENXY!'
 
-ml = 0
-i = 0
-l = 0
-k = 0
-s = ''
-while i in range(len(data)):
-    if data[i] == word[k]:
-        s += data[i]
-    elif data[i] == word[k+1]:
-        s += data[i]
-        if k < len(word) - 2:
-            k += 1
-        else:
-            k = 0
-    else:
-
-        ml = max(ml,len(s)) 
-        l = 0
-        k = 0
-    i += 1
-print(ml)

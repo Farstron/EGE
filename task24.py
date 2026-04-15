@@ -56,18 +56,22 @@
 
 # with open('task24/24(3).txt') as file:
 #     data = file.read()
-# buk = 'AO'
-# s = ''
+# left = 0
 # res = []
-# for i in range(len(data)):
-#     if data[i] in buk:
-#         if (data.count('O') and data.count('A')) < 100:
-#             s += data[i]
+# state = False
+# right = 0
+# while right < len(data):
+#     if data[left:right].count('A') > 100 or  data[left:right].count('O') > 100:
+#         if not state:
+#             res.append(len(data[left:right-1]))
+#             state = True
 #         else:
-#             if s != '':
-#                 res.append(len(s))
-#                 s= ''
+#             left += 1
+#     else:
+#         right += 1
+#         state = False
 # print(max(res))
-"решить"
 
-
+s = 'RRGOAGDNDNRNORDGNNGNARON'
+s = 'RNOAGD'
+print(len(s) == len(set(s)))

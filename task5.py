@@ -443,26 +443,97 @@
 
 # https://education.yandex.ru/ege/inf/task/01488fc0-61e5-4122-9c73-a3cb09336b7a
 
-def Tok (num,k):
-    alf = {0:'0',1:'1', 2:'2', 3:'3'}
-    res = ''
-    while num != 0:
-        res = alf[num % k] + res
-        num //=k 
-    return res
-res = []
-for N in range(1,1000):
-    R = Tok(N,2)
-    if N % 4 == 0:
-        R = R + R[-2::]
-    else: 
-        r = Tok((N % 4),2)
-        R = R + r
-    if R and R[-1] == '0':
-        R = R[:-1]
-    a = int(R,2)
-    if a > 213: 
-        res.append(a) 
-print(min(res))
+# def Tok (num,k):
+#     alf = {0:'0',1:'1', 2:'2', 3:'3'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //=k 
+#     return res
+# res = []
+# for N in range(1,1000):
+#     R = Tok(N,2)
+#     if N % 4 == 0:
+#         R = R + R[-2::]
+#     else: 
+#         r = Tok((N % 4),2)
+#         R = R + r
+#     if R[-1] == '0':
+#         R = R[:-1]
+#     a = int(R,2)
+#     if a > 213: 
+#         res.append(a) 
+# print(min(res))
     
-        
+  
+#https://education.yandex.ru/ege/inf/task/145d6646-6e3f-462c-ad1c-842fed541b24
+
+
+# def Tok(num,k):
+#     alf = {0:'0',1:'1',2:'2',3:'3',4:'4'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //=k
+#     return res
+# res = []
+# for N in range(1000,1,-1):
+#     R = Tok(N,3)
+#     if N % 3 == 0: 
+#         R = '1' + R + '02'
+#     else:
+#         ost = Tok((N % 3)*4,3)
+#         R = R + ost
+#     r = int(R,3)
+#     if r < 100:
+#         res.append(N)
+# print(max(res))
+
+
+
+# https://education.yandex.ru/ege/inf/task/46490fec-8d3a-43f1-95ba-bf8609342082
+
+# def Tok(num,k):
+#     alf = {0:'0',1:'1',2:'2',3:'3'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] +res 
+#         num//=k
+#     return res
+# res = []
+# for N in range(1,1000):
+#     R = Tok(N,2)
+#     if N % 2 == 0:
+#         R = '10' + R
+#     else: 
+#         R = '1' + R + '01'
+#     r = int(R,2)
+#     if r < 30:
+#         res.append(N)
+# print(max(res))
+
+
+# https://education.yandex.ru/ege/inf/task/b00be403-f157-4e28-8608-f9ee01a687f6
+
+# def Tok(num,k):
+#     alf = {0:'0',1:'1',2:'2',3:'3'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //=k
+#     return res
+
+# res =[]
+
+# for N in range(1,1000):
+#     R = Tok(N,2)
+#     if N % 2 ==0:
+#         R = '1' + R + '00'
+#     else:
+#         t = Tok(R.count('1'),2)
+#         R = R + t
+#     r = int(R,2)
+#     if r > 190:
+#         res.append(N)
+# print(min(res))
+

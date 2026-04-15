@@ -184,29 +184,64 @@
 #         t.dot(5)
 # t.done()
 
-import turtle as t
-t.speed(100)
-t.left(90)
-l=10
-for i  in range(2):
-    t.forward(25*l)
-    t.left(270)
-    t.forward(17*l)
-    t.right(90)
-t.up()
-t.forward(12*l)
-t.right(90)
-t.forward(9*l)
-t.left(90)
-t.down()
-for i in range(2):
-    t.forward(19*l)
-    t.right(90)
-    t.forward(11*l)
-    t.right(90)
-t.up()
-for x in range(0,25):
-    for y in range(0,35):
-        t.goto(x*l, y*l)
-        t.dot(5)
-t.done()
+# import turtle as t
+# t.speed(100)
+# t.left(90)
+# l=10
+# for i  in range(2):
+#     t.forward(25*l)
+#     t.left(270)
+#     t.forward(17*l)
+#     t.right(90)
+# t.up()
+# t.forward(12*l)
+# t.right(90)
+# t.forward(9*l)
+# t.left(90)
+# t.down()
+# for i in range(2):
+#     t.forward(19*l)
+#     t.right(90)
+#     t.forward(11*l)
+#     t.right(90)
+# t.up()
+# for x in range(0,25):
+#     for y in range(0,35):
+#         t.goto(x*l, y*l)
+#         t.dot(5)
+# t.done()
+
+# https://education.yandex.ru/ege/inf/task/d357aaaa-53b2-4348-bb4d-ee71688c114e
+# import turtle as t
+# t.speed(100)
+# t.left(90)
+# l = 15
+# for i in range(9):
+#     t.forward(15*l)
+#     t.right(90)
+#     t.forward(25*l)
+#     t.right(90)
+# t.up()
+# t.back(10*l)
+# t.right(90)
+# t.down()
+# for i in range(8):
+#     t.forward(15*l)
+#     t.left(90)
+#     t.forward(25*l)
+#     t.left(90)
+# t.up()
+# t.forward(6*l)
+# t.left(90)
+# t.down
+# for i in range(7):
+#     t.forward(15*l)
+#     t.right(90)
+#     t.forward(25*l)
+#     t.right(90)
+# t.up()
+# for x in range(0,26):
+#     for y in range(0,27):
+#         t.goto(x*l,y*l)
+#         t.dot(5)
+# t.done()

@@ -99,6 +99,7 @@
 
 
 # https://education.yandex.ru/ege/inf/task/37e7362a-fc21-4cc7-acb1-3859dde6d2ef
+'''!!!!!!!!!!!!!!!!!!!!!!_________________'''
 
 with open('task24/24(6).txt') as file:
     data = file.read()

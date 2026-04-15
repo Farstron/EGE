@@ -72,6 +72,50 @@
 #         state = False
 # print(max(res))
 
-s = 'RRGOAGDNDNRNORDGNNGNARON'
-s = 'RNOAGD'
-print(len(s) == len(set(s)))
+# s = 'RRGOAGDNDNRNORDGNNGNARON'
+# s = 'RNOAGD'
+# print(len(s) == len(set(s)))
+
+
+# https://education.yandex.ru/ege/inf/task/dc2aa40a-ee08-4e9c-b43f-81fbccbd1d7e
+
+# with open('task24/24(5).txt') as file:
+#     data = file.read()
+# res = []
+# left = 0
+# state = False
+# right = 0
+# while right < len(data):
+#     if len(data[left:right]) != len(set(data[left:right])):
+#         if not state:
+#             res.append(len(data[left:right-1]))
+#             state = True
+#         else:
+#             left += 1
+#     else:
+#         right +=1
+#         state = False
+# print(max(res))
+
+
+# https://education.yandex.ru/ege/inf/task/37e7362a-fc21-4cc7-acb1-3859dde6d2ef
+
+with open('task24/24(6).txt') as file:
+    data = file.read()
+res = []
+left = 0
+state = False
+right = 0
+nums = '123'
+buks = 'KLMN'
+while right < len(data):
+    if data[left:right].count(buks)*2 == data[left:right].count(nums):
+        if not state:
+            res.append(len(data[left:right]))
+            state = True
+        else:
+            left += 1
+    else: 
+        right +=1
+        state = False
+print(max(res))

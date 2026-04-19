@@ -245,3 +245,31 @@
 #         t.goto(x*l,y*l)
 #         t.dot(5)
 # t.done()
+
+
+import turtle as t
+t.speed(100)
+t.left = 90
+l = 6
+for i in range(7):
+    t.forward(78*l)
+    t.right(90)
+    t.forward(51*l)
+    t.right(90)
+t.up()
+t.right(90)
+t.forward(18*l)
+t.right(90)
+t.forward(6*l)
+t.down()
+for i in range(3):
+    t.right(90)
+    t.forward(22*l)
+    t.right(90)
+    t.forward(44*l)
+t.up()
+for x in range(40,100):
+    for y in range(-51,-30):
+        t.goto(x*l,y*l)
+        t.dot(5)
+t.done()

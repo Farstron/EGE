@@ -340,3 +340,11 @@
 #             for w in range(2):
 #                 if (((x and y) <= (not(z))) and (x <= y) or w) == 0:
 #                     print(x, y, z, w)
+
+print('a b c d')
+for a in range(2):
+    for b in range(2):
+        for c in range(2):
+            for d in range(2):
+                if (((a and b) <= c) and ((b and c) <= d)) == 0:
+                    print(a,b,c,d)

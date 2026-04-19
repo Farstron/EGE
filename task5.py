@@ -537,3 +537,29 @@
 #         res.append(N)
 # print(min(res))
 
+#https://education.yandex.ru/ege/inf/task/f4f17581-c911-4ab0-9a72-a70827259b20
+
+num = 1234
+num_arr = list(map(int,list(str(num))))
+# num_arr = []
+# for el in str(num):
+#     num_arr.append(int(el))
+pr = 1
+for el in num_arr:
+    pr *= el
+pr //= (max(num_arr) *  min(num_arr))
+# print(num_arr, max(num_arr) + min(num_arr), pr, len(set(num_arr)) == len(num_arr))
+
+for num in range(1000,10000):
+    num_arr = list(map(int,list(str(num))))
+    if len(set(num_arr)) != len(num_arr):
+        continue
+    s = max(num_arr) + min(num_arr)
+    pr = 1
+    for el in num_arr:
+        if el != max(num_arr) and el != min(num_arr):
+            pr *= el
+    R = int(str(min(s,pr)) + str(max(s,pr)))
+    if R > 85:
+        print(num)
+        break

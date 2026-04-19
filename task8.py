@@ -180,12 +180,16 @@ from itertools import permutations as PE
 Под каким номером в списке идёт последнее слово, в котором содержится ровно 2 гласные буквы?
 '''
 
-# c = 0 
+from itertools import product as PR
+
+# c = 0
+# last_number = 0
 # for el in PR('ИНЬЮ', repeat=5):
-#     el=''.join(el)
-#     if (el in "ИЮ" == 2 ):
-#         c =+ 1
-# print(c)
+#     c += 1
+#     el = ''.join(el)
+#     if el.count('И') + el.count('Ю') == 2:
+#         last_number = c
+# print(last_number)
 
 # print(int("31020", 4)+1)
 
@@ -204,3 +208,32 @@ from itertools import permutations as PE
 #     if el.count('5') >= 2:
 #         C += 1
 # print(C)
+
+
+# https://education.yandex.ru/ege/inf/task/86d21473-bf55-4b4d-99d9-d620244843ad
+# from itertools import product as PR
+# c= 0
+# for el in PR('АБВОСТУ', repeat=5):
+#     c+=1
+#     el = ''.join(el)
+#     if 'А' in el or 'О' in el:
+#         continue
+#     if len(set(el)) != 5:
+#         continue
+#     if el[-2:] == 'СБ':
+#         print(c,el)
+#         break
+
+
+# https://education.yandex.ru/ege/inf/task/4c623ce7-3e25-4a25-9660-2d139d520811
+from itertools import product as PR
+c = 0
+ln = 0
+for el in PR('АЙЛМ', repeat= 5):
+    c+=1
+    el = ''.join(el)
+    if el.count('М') >=2:
+        continue
+    if "ЛЛ" not in el:
+        ln = c
+print(ln)

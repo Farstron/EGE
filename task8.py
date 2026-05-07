@@ -240,17 +240,33 @@ from itertools import product as PR
 
 # https://education.yandex.ru/ege/inf/task/08a16fb2-3773-4f00-8961-cfa21b2e65a9
 
+# from itertools import product as PR
+# c = 0
+# for el in PR('ГИПЕРБОЛА', repeat=6):
+#     el = ''.join(el)
+#     if el[0] not in "ИЕОА" and el[-1] not in 'ИЕОА':
+#         f = True
+#         for el1 in PR('ГПРБЛ', "ИЕОА", "ГПРБЛ"):
+#             el1 = ''.join(el1)
+#             if el1 in el:
+#                 f = False
+#         if f:
+#             c+=1
+# print(c)
+    
+
+
+# https://education.yandex.ru/ege/inf/task/701d192b-06f1-4cbe-8bc7-6e2d63be9e03
+
 from itertools import product as PR
-c = 0
-for el in PR('ГИПЕРБОЛА', repeat=6):
-    el = ''.join(el)
-    if el[0] not in "ИЕОА" and el[-1] not in 'ИЕОА':
-        f = True
-        for el1 in PR('ГПРБЛ', "ИЕОА", "ГПРБЛ"):
-            el1 = ''.join(el1)
-            if el1 in el:
-                f = False
-        if f:
-            c+=1
-print(c)
+c=0
+ln=0
+for el in PR('АЕЛПРЬ', repeat=5):
+    c+=1
+    el=''.join(el)
+    if el[0] not in 'ЬР' and el.count('Л') >= 2:
+        if c % 2==0: 
+            ln = c
+print(ln)
+
     

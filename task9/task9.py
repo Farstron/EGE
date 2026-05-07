@@ -15,13 +15,13 @@
 #         c+=1
 # print(c)
         
-with open('task9/task9(2).txt') as file:
-    data = [list(map(int,el.split('\t'))) for el in file.read().split('\n')]
-c = 0
-for i in range(len(data)):
-    for el in set(data[i]):
-        if data[i].count(el) == 3 and len(set(data[i])) == 5:
-            if el ** 2 > (sum(data[i]) - 3 * el):
-                c += 1
-print(c)
+# with open('task9/task9(2).txt') as file:
+#     data = [list(map(int,el.split('\t'))) for el in file.read().split('\n')]
+# c = 0
+# for i in range(len(data)):
+#     for el in set(data[i]):
+#         if data[i].count(el) == 3 and len(set(data[i])) == 5:
+#             if el ** 2 > (sum(data[i]) - 3 * el):
+#                 c += 1
+# print(c)
 

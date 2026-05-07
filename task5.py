@@ -539,27 +539,129 @@
 
 #https://education.yandex.ru/ege/inf/task/f4f17581-c911-4ab0-9a72-a70827259b20
 
-num = 1234
-num_arr = list(map(int,list(str(num))))
-# num_arr = []
-# for el in str(num):
-#     num_arr.append(int(el))
-pr = 1
-for el in num_arr:
-    pr *= el
-pr //= (max(num_arr) *  min(num_arr))
-# print(num_arr, max(num_arr) + min(num_arr), pr, len(set(num_arr)) == len(num_arr))
+# num = 1234
+# num_arr = list(map(int,list(str(num))))
+# # num_arr = []
+# # for el in str(num):
+# #     num_arr.append(int(el))
+# pr = 1
+# for el in num_arr:
+#     pr *= el
+# pr //= (max(num_arr) *  min(num_arr))
+#  print(num_arr, max(num_arr) + min(num_arr), pr, len(set(num_arr)) == len(num_arr))
 
-for num in range(1000,10000):
-    num_arr = list(map(int,list(str(num))))
-    if len(set(num_arr)) != len(num_arr):
-        continue
-    s = max(num_arr) + min(num_arr)
-    pr = 1
-    for el in num_arr:
-        if el != max(num_arr) and el != min(num_arr):
-            pr *= el
-    R = int(str(min(s,pr)) + str(max(s,pr)))
-    if R > 85:
-        print(num)
-        break
+# for num in range(1000,10000):
+#     num_arr = list(map(int,list(str(num))))
+#     if len(set(num_arr)) != len(num_arr):
+#         continue
+#     s = max(num_arr) + min(num_arr)
+#     pr = 1
+#     for el in num_arr:
+#         if el != max(num_arr) and el != min(num_arr):
+#             pr *= el
+#     R = int(str(min(s,pr)) + str(max(s,pr)))
+#     if R > 85:
+#         print(num)
+#         break
+
+
+# https://education.yandex.ru/ege/inf/task/75114590-5b4c-4471-b745-a989d6f280c3
+
+# def Tok(num,k):
+#     alf= {0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:"8",9:'9'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res 
+#         num //= k
+#     return res
+# res=[]
+# for N in range(8,1000):
+#     R = Tok(N,8)
+#     if N % 2 ==0:
+#         R = R + R[-1]
+#     else: 
+#         R= list(R)
+#         r = R[0]
+#         R[0] = R[-1]
+#         R[-1] = r
+#         R = ''.join(R)
+#     a = int(R,8)
+#     if a < 254:
+#         res.append(N)
+# print(max(res))
+
+
+# https://education.yandex.ru/ege/inf/task/acdb7e26-a307-48e1-8eba-ecfaa43d52c6
+
+# def Tok(num,k):
+#     alf= {0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:"8",9:'9'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res 
+#         num //= k
+#     return res
+
+# res = []
+# for N in range(3,1000):
+#     R = Tok(N,3)
+#     if R[0] == R[-1]:
+#         R = R + R[0]
+#     else:
+#         if R[0] > R[-1]:
+#             R = R + R[0]
+#         else:
+#             R = R + R[-1]
+#     r = int(R,3)
+#     if r > 49:
+#         res.append(N)
+# print(min(res))
+
+
+# https://education.yandex.ru/ege/inf/task/839f318a-3c6a-48de-9ce5-4e38c8a8adc7
+
+# def Tok(num,k):
+#     alf= {0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:"8",9:'9'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res 
+#         num //= k
+#     return res
+
+# res = []
+# for N in range(5,1000):
+#     R = Tok(N,2)
+#     if N % 3 == 0:
+#         R = R + R[-3] + R[-2] + R[-1]
+#     else: 
+#         r = Tok((N % 3) * 3, 2) 
+#         R = R + r
+#     a = int(R,2)
+#     if a < 130:
+#         res.append(N)
+# print(max(res))
+
+
+# https://education.yandex.ru/ege/inf/task/c610ec9b-31e4-46b6-b58c-45523c64cbc9
+
+def Tok(num,k):
+    alf= {0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:"8",9:'9'}
+    res = ''
+    while num != 0:
+        res = alf[num % k] + res 
+        num //= k
+    return res
+
+res =[]
+
+for N in range(483,1000):
+    R= Tok(N,8)
+    r = (sum(list(map(int,list(str(R))))))
+    if r % 2 == 0:
+        a = Tok(r,8)
+        R = R + a
+    else: 
+        s = Tok(r,8)
+        R = s + R
+    c = int(R,8)
+    res.append(R)
+print(min(res))

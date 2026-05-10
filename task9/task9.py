@@ -25,3 +25,11 @@
 #                 c += 1
 # print(c)
 
+with open('task9/task(3).txt') as file:
+    data = [list(map(int,el.split('\t'))) for el in file.read().split('\n')]
+c = 0
+for i in range(len(data)):
+    for el in set(data[i]):
+        if data[i].count(el) == len(set(data[i])):
+
+            

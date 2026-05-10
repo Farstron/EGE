@@ -258,15 +258,87 @@ from itertools import product as PR
 
 # https://education.yandex.ru/ege/inf/task/701d192b-06f1-4cbe-8bc7-6e2d63be9e03
 
-from itertools import product as PR
-c=0
-ln=0
-for el in PR('АЕЛПРЬ', repeat=5):
-    c+=1
-    el=''.join(el)
-    if el[0] not in 'ЬР' and el.count('Л') >= 2:
-        if c % 2==0: 
-            ln = c
-print(ln)
+# from itertools import product as PR
+# c=0
+# ln=0
+# for el in PR('АЕЛПРЬ', repeat=5):
+#     c+=1
+#     el=''.join(el)
+#     if el[0] not in 'ЬР' and el.count('Л') >= 2:
+#         if c % 2==0: 
+#             ln = c
+# print(ln)
 
     
+# https://education.yandex.ru/ege/inf/task/6fbcf8cd-d727-4ea5-86b2-12193523ab8b
+# from itertools import product as PR
+# c= 0
+# for el in PR("ВОЗДУХ",repeat=5):
+#     el= ''.join(el)
+#     if not(el.count('О') + el.count('У')) == 1:
+#         continue
+#     if 'О' in el:
+#         pos = el.find('О')
+#     else: 
+#         pos = el.find('У')
+#     if (pos > 0 and el[pos-1] in 'ВХ') or (pos < 4 and el[pos+1] in 'ВХ'):
+#         continue
+#     c+=1
+# print(c)
+
+
+# https://education.yandex.ru/ege/inf/task/701d192b-06f1-4cbe-8bc7-6e2d63be9e03
+
+# from itertools import product as PR 
+# c= 0
+# ln = 0 
+# for el in PR('АЕЛПРЬ',repeat=5):
+#     c+=1
+#     el=''.join(el)
+#     if el[0] not in 'РЬ' and el.count('Л') >= 2: 
+#         if c % 2 == 0: 
+#             ln = c
+# print(ln)
+
+
+# https://education.yandex.ru/ege/inf/task/4e2f69a3-5052-46b2-bea8-9de0b660c3d1
+
+# from itertools import product as PR
+# c=0
+# for el in PR('0123456789ABCDEF',repeat=8):
+#     el=''.join(el)
+#     if el.count('0') == 2 and int(el,16) % 2 == 0:
+#             c+=1
+# print(c) 
+            
+
+
+# https://education.yandex.ru/ege/inf/task/e4bb815e-4a86-4423-ab51-7b896e96d693
+
+# from itertools import product as PR
+# c=0
+# for el in PR('ГИРЛЯНДА', repeat=9):
+#     el = ''.join(el)
+#     if el.count('A') == 1:
+#         f = True
+#         for el1 in PR('ГРЛНД','А', 'ГРЛНД'):
+#             el1 =''.join(el1)
+#             if el1 in el:
+#                 f= False
+#         if f:
+#             c +=1
+# print(c)
+
+from itertools import product as PR
+c=0
+ch = '01234567'
+chet= '0246'
+nechet = '1357'
+for el in PR(chet, nechet, chet,nechet,chet,nechet,chet):
+    el=''.join(el)
+    if el[0] == 0:
+        continue
+    if len(set(el)) != 5:
+        continue
+    c+= 1
+print(c)

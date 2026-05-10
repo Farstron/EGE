@@ -540,21 +540,92 @@
 
 # https://education.yandex.ru/ege/inf/task/880be092-14f3-414e-8f54-f6b7e8c108b2
 
+# def Tok(num,k):
+#     alf = {0:'0', 1:"1",2:'2',3:'3'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return  res
+# res = []
+# for N in range(0,1000):
+#     R = Tok(N,2)
+#     r = str((sum(int(d) for d in str(R))) % 2)
+#     R = R + r
+#     a = str((sum(int(d) for d in str(R))) % 2)
+#     R = R + a
+#     s = int(R,2)
+#     if s > 253:
+#         res.append(N)
+# print(min(res))
+
+
+# https://education.yandex.ru/ege/inf/task/f831cc07-c244-4635-9989-adcb36a54e26
+
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1',2:"2",3:'3',4:'4',5:'5',6:'6',7:"7",8:"8"}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res
+
+# res = []
+
+# for N in range(1,1000): 
+#     R = Tok(N,7)
+#     if N % 7== 0:
+#         R = R + R[-2] + R[-1]
+#     else: 
+#         r = Tok((N % 7)*2,7)
+#         R = R + r
+#     a = int(R,7)
+#     if a < 220:
+#         res.append(N)
+# print(max(res))  
+
+
+# https://education.yandex.ru/ege/inf/task/c610ec9b-31e4-46b6-b58c-45523c64cbc9
+
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1',2:"2",3:'3',4:'4',5:'5',6:'6',7:"7",8:"8"}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res
+
+# res = []
+
+# for N in range(483,10000):
+#     R = Tok(N,8)
+#     r = sum(int(d) for d in R)
+#     if r % 2 == 0:
+#         R = R + Tok(r,8)
+#     else: 
+#         R = Tok(r, 8) + R
+#     a = int(R,8)
+#     res.append(a)
+# print(min(res))
+
+
+
 def Tok(num,k):
-    alf = {0:'0', 1:"1",2:'2',3:'3'}
+    alf = {0:'0', 1:'1',2:"2",3:'3',4:'4',5:'5',6:'6',7:"7",8:"8"}
     res = ''
     while num != 0:
         res = alf[num % k] + res
         num //= k
-    return  res
-res = []
-for N in range(0,1000):
+    return res
+
+res=[]
+for N in range(1,1000):
     R = Tok(N,2)
-    r = str((sum(int(d) for d in str(R))) % 2)
-    R = R + r
-    a = str((sum(int(d) for d in str(R))) % 2)
-    R = R + a
-    s = int(R,2)
-    if s > 253:
-        res.append(N)
+    r = sum(int(d) for d in R)
+    R = R + str(r % 2)
+    r = sum(int(d) for d in R)
+    R = R + str(r % 2)
+    a = int(R,2)
+    if a > 97:
+        res.append(a)
 print(min(res))

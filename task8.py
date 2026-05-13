@@ -329,16 +329,35 @@ from itertools import product as PR
 #             c +=1
 # print(c)
 
+# from itertools import product as PR
+# c=0
+# ch = '01234567'
+# chet= '0246'
+# nechet = '1357'
+# for el in PR(chet, nechet, chet,nechet,chet,nechet,chet):
+#     el=''.join(el)
+#     if el[0] == 0:
+#         continue
+#     if len(set(el)) != 5:
+#         continue
+#     c+= 1
+# print(c)
+
+
+# from itertools import product as PR
+# c=0
+# for el in PR('АЕКЛ',repeat=5):
+#     c+=1
+#     el =''.join(el)
+#     if el.count('А') <=1 and el.count('К') == 2 and el.count('Л') == 0: 
+#         print(c,el)
+#         break
+
 from itertools import product as PR
 c=0
-ch = '01234567'
-chet= '0246'
-nechet = '1357'
-for el in PR(chet, nechet, chet,nechet,chet,nechet,chet):
+for el in PR('АЕЛПРЬ', repeat=6):
+    c+=1
     el=''.join(el)
-    if el[0] == 0:
-        continue
-    if len(set(el)) != 5:
-        continue
-    c+= 1
-print(c)
+    if el[0] not in 'АЛ' and el.count('П') >= 2:
+        print(c,el)
+        break

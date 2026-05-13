@@ -69,3 +69,8 @@
 # print(bin(32)[2:])
 # print(bin(160)[2:])
 # print(bin(240)[2:])
+
+
+from ipaddress import *
+net=ip_network('205.99.68.249/255.255.248.0',0)
+print(net[-2])

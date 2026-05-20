@@ -220,29 +220,32 @@
 #         res.append(sum(par))
 # print(len(res))
     
-# F = [int(s) for s in open('task17/t.txt')]
-# c2=0
+# F = [int(i) for i in open('task17/17(2).txt')]
+# a = min([i for i in F if i % 123 == 0 and i > 0 ])
+# res = []
+# c2 = 0 
 # for i in range(len(F) - 1):
-#     par=[F[i], F[i+1]]
-#     if F[i] > 0 and F[i+1] > 0:c2+=1
-#     if F[i] < 0 and F[i+1] < 0:c2+=1
-# print(c2)
-
-
-# f = [int(s) for s in open('task17/t.txt')]
-# c2=0  
-# res =[] 
-
-# m_p = None
-# for x in f:
-#     if x > 0 and x % 123 == 0:
-#         if m_p is None or x < m_p: 
-#             m_p = x
-
-# for i in range(len(f) - 1):
-#     par = f[i] + f[i+1]
-#     if par < m_p:
+#      if (F[i] + F[i+1]) < a:
 #         c2+=1
-#         res.append(par)
-# print(c2, max(res))
+#         res.append(F[i] + F[i+1])
+# print(c2,max(res))
 
+
+# f = [int(i) for i in open ('task17/17(3).txt')]
+# a = min([i for i in f if i % 23 == 0])
+# res=[]
+# for i in range(len(f)-1):
+#     if f[i] % a == 0 or f[i+1] % a == 0:
+#         res.append(f[i] + f[i+1])
+# print(len(res), max(res))
+
+f = [int(i) for i in open ('task17/17(4).txt')]
+a = max([i for i in f if abs(i) // 10000 in range(1,10) and abs(i) % 100 == 17 and i > 0])
+res = []
+print(a)
+for i in range(len(f) - 2):
+    if (abs(f[i]) % 100 == 17) or (abs(f[i+1]) % 100 == 17) or (abs(f[i+2]) % 100 == 17):
+        if abs(f[i]) + abs(f[i+1]) + abs(f[i+2]) <= a:
+            res.append(f[i] + f[i+1] + f[i+2])
+print(len(res), min(res)) 
+ 

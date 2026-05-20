@@ -158,3 +158,60 @@
 # count = 0
 # f(40)
 # print(count)
+
+
+
+# def f(n):
+#     if n < 3:
+#         return 1 
+#     if n >=3:
+#         return f(n-3) + f(n-2) + f(n-1)
+# print(f(6))
+
+
+# def f(n,mem):
+#     if n in list(mem.keys()):
+#         return mem[n]
+#     if n >= 3000:
+#         return n
+#     if n < 3000:
+#         return f(n+1,mem) * n
+# mem = {}
+# for n in range(3000,1,-1):
+#     mem[n] = f(n,mem)
+# print((f(52,mem) - 2 * f(53,mem)) / f(54,mem))
+
+# f1=[]
+# n=247563
+# while n >= 10:
+#     f1.append(n+3)
+#     n = n - 3
+# print(max(f1), min(f1),  len(f1))
+
+# f1=[]
+# n=247560
+# while n >= 10:
+#     f1.append(n+3)
+#     n = n - 3
+# print(max(f1), min(f1),  len(f1))
+
+# f1=[]
+# n=247557
+# while n >= 10:
+#     f1.append(n+3)
+#     n = n - 3
+# print(max(f1), min(f1),  len(f1))
+
+# print(247563*(247566/519-477))
+
+# def f(n,mem):
+#     if n in list(mem.keys()):
+#         return mem[n]
+#     if n < 10:
+#         return n
+#     if n >= 10:
+#         return 3*n + f(n - 3,mem)
+# mem = {}
+# for n in range(10,6251):
+#     mem[n] = f(n,mem)
+# print((f(6250,mem) + 2 * f(6244,mem)) / f(6238,mem))

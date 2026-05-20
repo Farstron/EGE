@@ -353,11 +353,25 @@ from itertools import product as PR
 #         print(c,el)
 #         break
 
+# from itertools import product as PR
+# c=0
+# for el in PR('АЕЛПРЬ', repeat=6):
+#     c+=1
+#     el=''.join(el)
+#     if el[0] not in 'АЛ' and el.count('П') >= 2 and c % 2== 1:
+#         print(c,el)
+#         break
+
 from itertools import product as PR
-c=0
-for el in PR('АЕЛПРЬ', repeat=6):
-    c+=1
-    el=''.join(el)
-    if el[0] not in 'АЛ' and el.count('П') >= 2:
-        print(c,el)
-        break
+c=0 
+for el in PR('0123456789ABCD',repeat = 5):
+    el = ''.join(el)
+    f = True 
+    for i in range(4):
+        a,b = el[i], el[i+1]
+        if (a in 'ABCD' and b in '13579') or (a in '13579' and b in 'ABCD'):
+            f = False
+            break
+    if f:
+        c+=1
+print(c)

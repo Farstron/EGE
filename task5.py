@@ -652,24 +652,42 @@
 # print(max(res))
 
 
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1',2:"2",3:'3',4:'4',5:'5',6:'6',7:"7",8:"8"}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res
+
+# res = []
+
+# for N in range(1,10000):
+#     R= Tok(N,2)
+#     r= sum(int(d) for d in R)
+#     if r % 2 == 0:
+#         R = '10' + R[2:] + '0'
+#     else: 
+#         R = '11' + R[2:] + '1'
+#     a = int(R,2)
+#     if a <= 19:
+#         res.append(N)
+# print(max(res))
+
+
 def Tok(num,k):
-    alf = {0:'0', 1:'1',2:"2",3:'3',4:'4',5:'5',6:'6',7:"7",8:"8"}
+    alf = {0:"0",1:'1',2:'2',3:'3'}
     res = ''
     while num != 0:
         res = alf[num % k] + res
-        num //= k
+        num//=k
     return res
-
 res = []
-
-for N in range(1,10000):
-    R= Tok(N,2)
-    r= sum(int(d) for d in R)
-    if r % 2 == 0:
-        R = '10' + R[2:] + '0'
-    else: 
-        R = '11' + R[2:] + '1'
-    a = int(R,2)
-    if a <= 19:
-        res.append(N)
+for N in range(1,1000):
+    R = Tok(N,3)
+    R = ''.join(sorted(R, reverse=True))
+    R = R + max(R)
+    r = int(R,3)
+    if r < 1200:
+        res.append(r)
 print(max(res))

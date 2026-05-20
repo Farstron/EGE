@@ -208,15 +208,41 @@
 #         res.append(sum(tri)) 
 # print(len(res),max(res))
 
-F = [int(s) for s in open('task17/198.txt')]
-res =[]
-for i in range(len(F) - 2):
-    par = [F[i], F[i+1]]
-    c2 = 0
-    C2 = 0 
-    for el in par:
-        if el // 1000 in range(1,10):c2=+1
-    if c2 in par >= 1 and F[i] + F[i+1] <= max(par):
-        res.append(sum(par))
-print(len(res))
+# F = [int(s) for s in open('task17/198.txt')]
+# res =[]
+# for i in range(len(F) - 2):
+#     par = [F[i], F[i+1]]
+#     c2 = 0
+#     C2 = 0 
+#     for el in par:
+#         if el // 1000 in range(1,10):c2=+1
+#     if c2 in par >= 1 and F[i] + F[i+1] <= max(par):
+#         res.append(sum(par))
+# print(len(res))
     
+# F = [int(s) for s in open('task17/t.txt')]
+# c2=0
+# for i in range(len(F) - 1):
+#     par=[F[i], F[i+1]]
+#     if F[i] > 0 and F[i+1] > 0:c2+=1
+#     if F[i] < 0 and F[i+1] < 0:c2+=1
+# print(c2)
+
+
+# f = [int(s) for s in open('task17/t.txt')]
+# c2=0  
+# res =[] 
+
+# m_p = None
+# for x in f:
+#     if x > 0 and x % 123 == 0:
+#         if m_p is None or x < m_p: 
+#             m_p = x
+
+# for i in range(len(f) - 1):
+#     par = f[i] + f[i+1]
+#     if par < m_p:
+#         c2+=1
+#         res.append(par)
+# print(c2, max(res))
+

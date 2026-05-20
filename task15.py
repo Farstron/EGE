@@ -163,14 +163,44 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #         print(A)
 #         break
 
-for A in range(100):
+# for A in range(100):
+#     f = True
+#     for x in range(100):
+#         if f:
+#             for y in range(100):
+#                 if ((-(x-2)**2 + 3 < y) or ((x-1)**2 +y**2 < 7) or (5*x + A > y)):
+#                     f = False
+#                     break
+#         if f:
+#             print(A)
+#             break
+
+# for A in range(1000):
+#     f = True
+#     for x in range(1000):
+#         if f:
+#             for y in range(1000):
+#                 if not((3*y -x > 12) or (2*x + 6*y >= 72) or (x > 24) or (x* y < A)):
+#                     f = False
+#                     break
+#     if f: 
+#         print(A)
+#         break
+
+def Del(n,m):
+    if n % m == 0:
+        return True
+    return False
+
+res = []
+for A in range(1,10000):
     f = True
-    for x in range(100):
-        if f:
-            for y in range(100):
-                if ((-(x-2)**2 + 3 < y) or ((x-1)**2 +y**2 < 7) or (5*x + A > y)):
-                    f = False
-                    break
-        if f:
-            print(A)
+    for x in range(0,1000000):
+        if not((not Del(x,A)) <= (not (Del(x,48) and Del(x, 35)))):
+            f = False
             break
+    if f:
+        res.append(A)
+print(max(res)) 
+
+

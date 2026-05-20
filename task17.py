@@ -208,15 +208,44 @@
 #         res.append(sum(tri)) 
 # print(len(res),max(res))
 
-F = [int(s) for s in open('task17/198.txt')]
-res =[]
-for i in range(len(F) - 2):
-    par = [F[i], F[i+1]]
-    c2 = 0
-    C2 = 0 
-    for el in par:
-        if el // 1000 in range(1,10):c2=+1
-    if c2 in par >= 1 and F[i] + F[i+1] <= max(par):
-        res.append(sum(par))
-print(len(res))
+# F = [int(s) for s in open('task17/198.txt')]
+# res =[]
+# for i in range(len(F) - 2):
+#     par = [F[i], F[i+1]]
+#     c2 = 0
+#     C2 = 0 
+#     for el in par:
+#         if el // 1000 in range(1,10):c2=+1
+#     if c2 in par >= 1 and F[i] + F[i+1] <= max(par):
+#         res.append(sum(par))
+# print(len(res))
     
+# F = [int(i) for i in open('task17/17(2).txt')]
+# a = min([i for i in F if i % 123 == 0 and i > 0 ])
+# res = []
+# c2 = 0 
+# for i in range(len(F) - 1):
+#      if (F[i] + F[i+1]) < a:
+#         c2+=1
+#         res.append(F[i] + F[i+1])
+# print(c2,max(res))
+
+
+# f = [int(i) for i in open ('task17/17(3).txt')]
+# a = min([i for i in f if i % 23 == 0])
+# res=[]
+# for i in range(len(f)-1):
+#     if f[i] % a == 0 or f[i+1] % a == 0:
+#         res.append(f[i] + f[i+1])
+# print(len(res), max(res))
+
+f = [int(i) for i in open ('task17/17(4).txt')]
+a = max([i for i in f if abs(i) // 10000 in range(1,10) and abs(i) % 100 == 17 and i > 0])
+res = []
+print(a)
+for i in range(len(f) - 2):
+    if (abs(f[i]) % 100 == 17) or (abs(f[i+1]) % 100 == 17) or (abs(f[i+2]) % 100 == 17):
+        if abs(f[i]) + abs(f[i+1]) + abs(f[i+2]) <= a:
+            res.append(f[i] + f[i+1] + f[i+2])
+print(len(res), min(res)) 
+ 

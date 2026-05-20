@@ -113,15 +113,52 @@
 
 # Сколько программ преобразуют число 103 в число 24, и при этом их траектория вычислений содержит число 73?
 
-import sys
-sys.setrecursionlimit(10**6)
+# import sys
+# sys.setrecursionlimit(10**6)
 
-def f(start, stop, path = ''):
-    if start < stop:
+# def f(start, stop, path = ''):
+#     if start < stop:
+#         return 0
+#     if start == stop: 
+#         return 1
+#     if start % 3 != 0:
+#         return f(start - 5, stop, path + 'A') + f((round(start/3) - 1 )* 3, stop, path + 'B')
+#     return f(start - 5, stop, path + 'A') + f(start // 3, stop, path + 'C')
+# print(f(103,73) * f(73,24))
+
+
+def f(x,y):
+    if x > y:
         return 0
-    if start == stop: 
+    if x == y:
         return 1
-    if start % 3 != 0:
-        return f(start - 5, stop, path + 'A') + f((round(start/3) - 1 )* 3, stop, path + 'B')
-    return f(start - 5, stop, path + 'A') + f(start // 3, stop, path + 'C')
-print(f(103,73) * f(73,24))
+    if x < y:
+        return f(x + 1, y) + f(x *2, y)
+print(f(3,6)* f(6,12) * f(12,16))
+
+
+def f(x,y):
+    if x > y or x == 25:
+        return 0
+    if x == y:
+        return 1
+    if x < y:
+        return f(x + 3, y) + f(x * 2, y) + f(x * 5, y)
+print(f(5,115))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

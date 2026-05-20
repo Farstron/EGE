@@ -38,14 +38,39 @@
 Примечание: IP-адреса подсети и широковещательной передачи (broadcast) не могут быть использованы для устройств.'''
 
 
-print('.'.join(['0'*(8-len(bin(int(el))[2:]))+ bin(int(el))[2:] for el in '61.58.73.42'.split('.')]))
-print('.'.join(['0'*(8-len(bin(int(el))[2:]))+ bin(int(el))[2:] for el in '61.58.75.136'.split('.')]))
+# print('.'.join(['0'*(8-len(bin(int(el))[2:]))+ bin(int(el))[2:] for el in '61.58.73.42'.split('.')]))
+# print('.'.join(['0'*(8-len(bin(int(el))[2:]))+ bin(int(el))[2:] for el in '61.58.75.136'.split('.')]))
 
-from itertools import product as pr
-c = 0
-for el in pr('01', repeat=10):
-    if ''.join(el) != '0000000000' and ''.join(el) != '1111111111':
-        el = '0011110100111010010010' + ''.join(el)
-        if el.count('1') % 2 == 1:
-            c += 1
-print(c)
+# from itertools import product as pr
+# c = 0
+# for el in pr('01', repeat=10):
+#     if ''.join(el) != '0000000000' and ''.join(el) != '1111111111':
+#         el = '0011110100111010010010' + ''.join(el)
+#         if el.count('1') % 2 == 1:
+#             c += 1
+# print(c)
+
+# print(bin(224)[2:])  '11100000'
+# print(bin(96)[2:])   '01100000'
+#                      '01100000'
+
+
+# print(bin(252)[2:])
+# print(bin(83)[2:])
+# print(int('01010000',2))
+# print(bin(62)[2:])
+# print(bin(68)[2:])
+# print(bin(248)[2:])
+# print(int('01000000',2))
+# print(int('01000111',2))
+# print(bin(128)[2:])
+# print(bin(192)[2:])
+# print(bin(168)[2:])
+# print(bin(32)[2:])
+# print(bin(160)[2:])
+# print(bin(240)[2:])
+
+
+from ipaddress import *
+net=ip_network('205.99.68.249/255.255.248.0',0)
+print(net[-2])

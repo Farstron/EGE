@@ -146,14 +146,15 @@
 #     return g(n-2) +1
 # for i in range(10,15548): g(i)
 # print(f(15548))
-def f(n):
-    global count
-    count += 1
-    if n >= 1:
-        count += 1
-        f(n - 1)
-        f(n // 2)
 
-count = 0
-f(40)
-print(count)
+# def f(n):
+#     global count
+#     count += 1
+#     if n >= 1:
+#         count += 1
+#         f(n - 1)
+#         f(n // 2)
+
+# count = 0
+# f(40)
+# print(count)

@@ -175,6 +175,7 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #             print(A)
 #             break
 
+<<<<<<< HEAD
 # for A in range(1000):
 #     f = True
 #     for x in range(1000):
@@ -204,3 +205,5 @@ for A in range(1,10000):
 print(max(res)) 
 
 
+=======
+>>>>>>> fd9ef4c91ec4c8d4ccc1e7ae3b7bdbef174554d1

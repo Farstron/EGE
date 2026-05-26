@@ -75,6 +75,10 @@
 # net=ip_network('205.99.68.249/255.255.248.0',0)
 # print(net[-2])
 
+# from ipaddress import *
+# net = ip_network('68.203.243.87/255.255.224.0',0)
+# print(net[-2])
+
 from ipaddress import *
-net = ip_network('68.203.243.87/255.255.224.0',0)
-print(net[-2])
+net  = ip_network('172.17.167.18/255.255.240.0',0)
+print(net[-2]) 

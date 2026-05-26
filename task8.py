@@ -362,16 +362,24 @@ from itertools import product as PR
 #         print(c,el)
 #         break
 
+# from itertools import product as PR
+# c=0 
+# for el in PR('0123456789ABCD',repeat = 5):
+#     el = ''.join(el)
+#     f = True 
+#     for i in range(4):
+#         a,b = el[i], el[i+1]
+#         if (a in 'ABCD' and b in '13579') or (a in '13579' and b in 'ABCD'):
+#             f = False
+#             break
+#     if f:
+#         c+=1
+# print(c)
+
 from itertools import product as PR
-c=0 
-for el in PR('0123456789ABCD',repeat = 5):
+c=0
+for el in PR('АВЕНС', repeat=5):
     el = ''.join(el)
-    f = True 
-    for i in range(4):
-        a,b = el[i], el[i+1]
-        if (a in 'ABCD' and b in '13579') or (a in '13579' and b in 'ABCD'):
-            f = False
-            break
-    if f:
-        c+=1
+    if el[0] == 'Н' and el.count('В') == 2 and (el.count('Н') <= 1 and el.count('А') <= 1 and el.count('С') <= 1 and el.count('Е') <= 1) :
+        c+= 1
 print(c)

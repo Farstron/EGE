@@ -127,25 +127,33 @@
 # print(f(103,73) * f(73,24))
 
 
+# def f(x,y):
+#     if x > y:
+#         return 0
+#     if x == y:
+#         return 1
+#     if x < y:
+#         return f(x + 1, y) + f(x *2, y)
+# print(f(3,6)* f(6,12) * f(12,16))
+
+
+# def f(x,y):
+#     if x > y or x == 25:
+#         return 0
+#     if x == y:
+#         return 1
+#     if x < y:
+#         return f(x + 3, y) + f(x * 2, y) + f(x * 5, y)
+# print(f(5,115))
+
 def f(x,y):
+    if x < y:
+        return 0
+    if x == y:
+        return 1
     if x > y:
-        return 0
-    if x == y:
-        return 1
-    if x < y:
-        return f(x + 1, y) + f(x *2, y)
-print(f(3,6)* f(6,12) * f(12,16))
-
-
-def f(x,y):
-    if x > y or x == 25:
-        return 0
-    if x == y:
-        return 1
-    if x < y:
-        return f(x + 3, y) + f(x * 2, y) + f(x * 5, y)
-print(f(5,115))
-
+        return f(x - 5, y) + f((round(x/3) - 1)*3,y) + f(x % 3 == 0, y)
+print(f(103,73) * f(73,24))
 
 
 

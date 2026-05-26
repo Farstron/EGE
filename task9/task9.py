@@ -25,11 +25,11 @@
 #                 c += 1
 # print(c)
 
-with open('task9/task(3).txt') as file:
-    data = [list(map(int,el.split('\t'))) for el in file.read().split('\n')]
-c = 0
-for i in range(len(data)):
-    for el in set(data[i]):
-        if data[i].count(el) == len(set(data[i])):
-
-            
+k = 0
+for s in open('task9/9.txt'):
+    num = [int(x) for x in s.split()]
+    num2 = [x for x in num if num.count(x) == 2]
+    num1 = [x for x in num if num.count(x) == 1]
+    if len(num2) == 4 and len(num1) == 4 and sum(set(num2))< sum(num1) and len(num1)>0:
+        k+=1
+print(k)

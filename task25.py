@@ -258,8 +258,14 @@
 
 import re 
 mask = '4.8.15.16.23'
+nums = []
+for n1 in range(10):
+    for n2 in range(10):
+        for n3 in range(10):
+            for n4 in range(10):
+                nums.append(int(f'4{n1}8{n2}15{n3}16{n4}23'))
 res ={}
-for el in range(408015016023, 498915916923):
+for el in nums:
     if re.fullmatch(mask, str(el)) and el % 123 == 42:
         res[el] = el//123
 print(len(res), max(res))

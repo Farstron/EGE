@@ -232,16 +232,3 @@
 
 
 
-import re
-
-pattern = '12345.7.8'
-
-#123450708
-#123459798
-res = {}
-for el in range(123450708,123459798+1):
-    if re.fullmatch(pattern, str(el)) and el % 31 == 0:
-        res[el] = el//31
-print(res)
-for el in res:
-    print(f'{el} {res[el]}')

@@ -211,21 +211,37 @@
             
 
 
-res = {}
-L = list(range(174457,174506))
-for i in range(len(L)):
-    if len(res) == 10:
-        break
-    d = []
-    for DEL in range(2,L[i]):
-        if L[i] % DEL == 0:
-            d.append(DEL)
-        if len(d) == 3:
-            break
-    if len(d) == 2:
-        res[d[0] * d[1]] = d
+# res = {}
+# L = list(range(174457,174506))
+# for i in range(len(L)):
+#     if len(res) == 10:
+#         break
+#     d = []
+#     for DEL in range(2,L[i]):
+#         if L[i] % DEL == 0:
+#             d.append(DEL)
+#         if len(d) == 3:
+#             break
+#     if len(d) == 2:
+#         res[d[0] * d[1]] = d
 
-for key in res:
-    print(res[key][0])
-for key in res:
-    print(res[key][1])
+# for key in res:
+#     print(res[key][0])
+# for key in res:
+#     print(res[key][1])
+
+
+
+import re
+
+pattern = '12345.7.8'
+
+#123450708
+#123459798
+res = {}
+for el in range(123450708,123459798+1):
+    if re.fullmatch(pattern, str(el)) and el % 31 == 0:
+        res[el] = el//31
+print(res)
+for el in res:
+    print(f'{el} {res[el]}')

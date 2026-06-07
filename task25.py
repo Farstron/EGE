@@ -256,16 +256,30 @@
 # print(res)
 
 
-import re 
-mask = '4.8.15.16.23'
-nums = []
+# import re 
+# mask = '4.8.15.16.23'
+# nums = []
+# for n1 in range(10):
+#     for n2 in range(10):
+#         for n3 in range(10):
+#             for n4 in range(10):
+#                 nums.append(int(f'4{n1}8{n2}15{n3}16{n4}23'))
+# res ={}
+# for el in nums:
+#     if re.fullmatch(mask, str(el)) and el % 123 == 42:
+#         res[el] = el//123
+# print(len(res), max(res))
+
+
+import re
+mask='.1.*23.*92'
+nums=[]
 for n1 in range(10):
-    for n2 in range(10):
+    for n2 in range(-1,10):
         for n3 in range(10):
-            for n4 in range(10):
-                nums.append(int(f'4{n1}8{n2}15{n3}16{n4}23'))
-res ={}
-for el in nums:
-    if re.fullmatch(mask, str(el)) and el % 123 == 42:
-        res[el] = el//123
-print(len(res), max(res))
+            nums.append(int(f'{n1}1'))
+res={}
+for el in range(112392,919992392):
+    if re.fullmatch(mask, str(el)) and el % 7977 == 0:
+        res[el] = el//7977
+print(res)

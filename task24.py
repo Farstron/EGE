@@ -101,22 +101,86 @@
 # https://education.yandex.ru/ege/inf/task/37e7362a-fc21-4cc7-acb1-3859dde6d2ef
 '''!!!!!!!!!!!!!!!!!!!!!!_________________'''
 
-with open('task24/24(6).txt') as file:
-    data = file.read()
+# with open('task24/24(6).txt') as file:
+#     data = file.read()
+# res = []
+# left = 0
+# state = False
+# right = 0
+# nums = '123'
+# buks = 'KLMN'
+# while right < len(data):
+#     if data[left:right].count(buks)*2 == data[left:right].count(nums):
+#         if not state:
+#             res.append(len(data[left:right]))
+#             state = True
+#         else:
+#             left += 1
+#     else: 
+#         right +=1
+#         state = False
+# print(max(res))
+
+# with open('task24/24(7).txt') as file:
+#     data = file.read()
+# res = []
+# l = 0
+# for i in data:
+#     if i == 'Y':
+#         l+=1
+#     else: 
+#         res.append(l)
+#         l=0
+# print(max(res),l) 
+
+
+# with open ('task24/24(8).txt') as file:
+#     data = file.read()
+# res = []
+# l = 0
+# for i in range(len(data)):
+#     if data[i-1] == data[i]:
+#         l += 1
+#     else:
+#         res.append(l)
+#         l = 0
+# print(max(res),l)
+
+
+# with open('task24/24(9).txt') as file:
+#     data = file.read()
+# res=[]
+# l = 0
+# for i in range(len(data)):
+#     if data[i] != data[i-1]:
+#         l +=1
+#     else:
+#         res.append(l)
+#         l = 0
+# print(max(res),l)
+
+
+with open ('task24/24(10).txt') as f:
+    data = f.read()
 res = []
-left = 0
-state = False
-right = 0
-nums = '123'
-buks = 'KLMN'
-while right < len(data):
-    if data[left:right].count(buks)*2 == data[left:right].count(nums):
-        if not state:
-            res.append(len(data[left:right]))
-            state = True
-        else:
-            left += 1
-    else: 
-        right +=1
-        state = False
-print(max(res))
+l = 1
+r = 0
+for i in range(len(data)-1):
+    if data[i-1] == 'I' and data[i] == 'T' or data[i-1] == 'T' and data[i] == 'I':
+        res.append(l)
+        l=1
+    else:
+        l+=1
+print(max(res),l)
+
+# with open ('task24/24(11).txt') as f:
+#     s = f.read()
+# res = []
+# c = 0
+# l = 0
+# for i in range(len(s)-2):
+#     if (s[i] == 'A' or s[i] ==  "B" or s[i] == "C") and (s[i+1] == 'C' or s[i+1] == 'D' or s[i+1] == 'E') and (s[i+2] not in 'AE') and (s[i] != s[i+1] and s[i+1] != s[i+2] and s[i] != s[i+2]):
+        
+#         l +=1
+# print(l)
+    

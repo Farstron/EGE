@@ -231,4 +231,35 @@
 #     print(res[key][1])
 
 
+# import re
 
+# pattern = '12345.7.8'
+
+# #123450708
+# #123459798
+# res = {}
+# for el in range(123450708,123459798+1):
+#     if re.fullmatch(pattern, str(el)) and el % 31 == 0:
+#         res[el] = el//31
+# print(res)
+# for el in res:
+#     print(f'{el} {res[el]}')
+
+
+# import re
+
+# mask = '123.*678'
+# res={}
+# for el in range(123678,12399678):
+#     if re.fullmatch(mask, str(el)) and el % 13==0:
+#         res[el] = el//13
+# print(res)
+
+
+import re 
+mask = '4.8.15.16.23'
+res ={}
+for el in range(408015016023, 498915916923):
+    if re.fullmatch(mask, str(el)) and el % 123 == 42:
+        res[el] = el//123
+print(len(res), max(res))

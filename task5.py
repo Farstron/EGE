@@ -693,3 +693,18 @@
 # print(max(res))
 
 
+
+# https://education.yandex.ru/ege/inf/task/f1975d41-7a47-4727-97c9-9b405f594a8b
+
+def Tok(num, k):
+    alf = {0:'0', 1:'1',2:'2'}
+    res=''
+    while num != 0:
+        res = alf[num%k] + res
+        num//= k
+    return res
+
+res = []
+for N in range(3, 1000):
+    R = Tok(N,2)
+    if R[-1] != R[-2]:

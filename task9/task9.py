@@ -25,11 +25,26 @@
 #                 c += 1
 # print(c)
 
+# k = 0
+# for s in open('task9/9.txt'):
+#     num = [int(x) for x in s.split()]
+#     num2 = [x for x in num if num.count(x) == 2]
+#     num1 = [x for x in num if num.count(x) == 1]
+#     if len(num2) == 4 and len(num1) == 4 and sum(set(num2))< sum(num1) and len(num1)>0:
+#         k+=1
+# print(k)
+
+
+
+# https://education.yandex.ru/ege/inf/task/5c54e314-516a-44fb-b41f-b06ffe3345af
+
 k = 0
-for s in open('task9/9.txt'):
+for s in open('task9/task9(4).txt'):
     num = [int(x) for x in s.split()]
-    num2 = [x for x in num if num.count(x) == 2]
-    num1 = [x for x in num if num.count(x) == 1]
-    if len(num2) == 4 and len(num1) == 4 and sum(set(num2))< sum(num1) and len(num1)>0:
-        k+=1
+    a,b,c,d = num
+    S = a + b + c + d
+    M = max(num)
+    if  S % 2 == 0 and M < S - M:
+        if (a + b == c + d) or (a + c == b + d) or (a + d== b + c):
+            k+=1
 print(k)

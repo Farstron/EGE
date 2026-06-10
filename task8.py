@@ -376,10 +376,20 @@ from itertools import product as PR
 #         c+=1
 # print(c)
 
+# from itertools import product as PR
+# c=0
+# for el in PR('АВЕНС', repeat=5):
+#     el = ''.join(el)
+#     if el[0] == 'Н' and el.count('В') == 2 and (el.count('Н') <= 1 and el.count('А') <= 1 and el.count('С') <= 1 and el.count('Е') <= 1) :
+#         c+= 1
+# print(c)
+
 from itertools import product as PR
 c=0
-for el in PR('АВЕНС', repeat=5):
-    el = ''.join(el)
-    if el[0] == 'Н' and el.count('В') == 2 and (el.count('Н') <= 1 and el.count('А') <= 1 and el.count('С') <= 1 and el.count('Е') <= 1) :
-        c+= 1
-print(c)
+ln = 0
+for el in PR('ИНЬЮ' ,repeat=5):
+    c+=1
+    el= ''.join(el)
+    if el.count('И') + el.count('Ю') ==2:
+        ln = c
+print(ln)

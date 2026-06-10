@@ -290,3 +290,25 @@ for el in nums:
     if el % 7977 == 0:
         res[el] = el//7977
 print(res)
+
+
+def mdiv(n):
+    d = 2
+    x = n
+    pr = []
+    while d * d <= x:
+        while (x % d == 0):
+            pr.append(d)
+            x //= d
+        d += 1
+    if x > 1:
+        pr.append(x)
+    res = {1}
+    for p in pr:
+        for d in list(res):
+            res.add(d*p)
+    return sorted(res)[1:len(res)-1]
+for num in range(174457, 174505+1):
+    tmp = mdiv(num)
+    if len(tmp) == 2:
+        print(num, tmp)

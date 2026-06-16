@@ -45,37 +45,37 @@
 #         game(next_h, max_moves, w_s, move + 1, results)
 
 #     return results
-def step(h):
-    k1, k2 = h
-    return (
-        (k1 - 2, k2),
-        (k1, k2 - 2),
-        (round(k1 / 2) if k1 >= k2 else k1,
-         round(k2 / 2) if k2 > k1 else k2)
-    )
+# def step(h):
+#     k1, k2 = h
+#     return (
+#         (k1 - 2, k2),
+#         (k1, k2 - 2),
+#         (round(k1 / 2) if k1 >= k2 else k1,
+#          round(k2 / 2) if k2 > k1 else k2)
+#     )
 
-def f(h, m, w_s):
-    if sum(h) <= w_s:
-        return m % 2 == 0
-    if m == 0:
-        return False
+# def f(h, m, w_s):
+#     if sum(h) <= w_s:
+#         return m % 2 == 0
+#     if m == 0:
+#         return False
 
-    moves = [f(x, m - 1, w_s) for x in step(h)]
+#     moves = [f(x, m - 1, w_s) for x in step(h)]
 
-    # если сейчас ход игрока, который должен добиться победы
-    if m % 2 == 1:
-        return any(moves)
-    else:
-        return all(moves)
+#     # если сейчас ход игрока, который должен добиться победы
+#     if m % 2 == 1:
+#         return any(moves)
+#     else:
+#         return all(moves)
 
-ans19 = []
+# ans19 = []
 
-for s in range(10, 1000):
-    if not f((23, s), 1, 33) and f((23, s), 2, 33):
-        ans19.append(s)
+# for s in range(10, 1000):
+#     if not f((23, s), 1, 33) and f((23, s), 2, 33):
+#         ans19.append(s)
 
-print(max(ans19))
-# 19 задание
+# print(max(ans19))
+# # 19 задание
 '''
 Известно, что Ваня выиграл своим первым ходом после неудачного первого хода Пети.
 
@@ -166,3 +166,85 @@ print(max(ans19))
 #                 f =False
 #                 break
 #     else: break        
+
+'''19,20,21'''
+# def f(k, x):
+#     if k >= 40:
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = [f(k + 1, x -1) , f(k + 4, x - 1 ), f(k * 2, x - 1)]
+#     return any (h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(1,40) if f(k,2)])
+# print([k for k in range(1,40) if not f(k,1) and f(k,3)])
+# print([k for k in range(1,40) if not f(k,2) and f(k,4)])
+
+
+# def f(k, x):
+#     if k <= 11:
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = [f(k - 3, x - 1) , f(k - 7, x - 1), f(k // 3, x - 1)]
+#     return any (h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(12,1000) if f(k,2)])
+# print([k for k in range(12,1000) if not f(k,1) and f(k,3)])
+# print([k for k in range(12,1000) if not f(k,2) and f(k,4)])
+
+
+# def f(k1,k2,x):
+#     if k1 + k2 >= 77:
+#         return x % 2== 0
+#     if x  == 0:
+#         return  0
+#     h = [f(k1 + 1, k2, x - 1),f(k1 * 2, k2, x - 1),f(k1, k2 + 1, x -1 ),f(k1, k2 * 2, x - 1)]
+#     return any(h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(1,70) if f(7, k, 2)])
+# print([k for k in range(1,70) if not f(7, k, 1) and f(7,k,3)])
+# print([k for k in range(1,70) if not f(7, k, 2) and f(7, k, 4 )])
+
+
+# def f (k, x ):
+#     if k <= 19:
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = ([f(k-5, x - 1)])
+#     if k % 2 == 0: 
+#         h.append(f(k// 2, x -1))
+#     if k % 3 == 0: 
+#         h.append(f(k// 3, x - 1))
+#     if k % 2 != 0 and k % 3!= 0: 
+#         h.append(f(k + 1, x - 1))
+#     return any(h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(20, 1000) if f(k,2)])
+# print([k for k in range(20, 1000) if not f(k,1) and f(k, 3)])
+# print([k for k in range(20, 1000) if not f(k,2) and f(k, 4)])
+
+# def f(k, x):
+#     if k >= 59: 
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = ([f(k + 1, x - 1), f(k + 3, x - 1), f(k * 4, x - 1)])
+#     return any(h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(1, 59) if f(k,2)])
+# print([k for k in range(1, 59) if not f(k,1) and f (k,3)])
+# print([k for k in range(1, 59) if not f(k,2) and f (k,4)])
+
+def f(k1, k2, x):
+    if k1 + k2 >= 123:
+        return x % 2 == 0
+    if x == 0:
+        return 0
+    h = [f(k1 + 1, k2, x - 1), f(k1 * 2, k2, x - 1 ),f(k1, k2 + 1 , x - 1),f(k1, k2 * 2, x - 1)]
+    return any(h) if x % 2 != 0 else all(h)
+
+print([k for k in range(1, 110) if f(13,k,2)])
+print([k for k in range(1, 110) if not f(13,k,1) and f(13,k,3)])
+print([k for k in range(1, 110) if not f(13,k,2) and f(13,k,4)])

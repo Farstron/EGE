@@ -384,12 +384,51 @@ from itertools import product as PR
 #         c+= 1
 # print(c)
 
+# from itertools import product as PR
+# c=0
+# ln = 0
+# for el in PR('ИНЬЮ' ,repeat=5):
+#     c+=1
+#     el= ''.join(el)
+#     if el.count('И') + el.count('Ю') ==2:
+#         ln = c
+# print(ln)
+
+# from itertools import product as PR 
+# c=0 
+# for el in PR('ЛЕОНИД', repeat=6):
+#     el= ''.join(el)
+#     if el.count('Л') == 2 and el.count("О") >=1:
+#        c+=1
+# print(c) 
+
+# from itertools import permutations as PE
+# c=0
+# ch = '012345678'
+# for el in PE(ch,5):
+#     if el[0] == '0':
+#         continue
+#     if sum(1 for i in el if i in '1357') == 1:
+#         c+=1
+# print(c)
+
+
+# c= 0
+# from itertools import product as PR
+# for el in PR('АЛПЦЯ', repeat=5):
+#     c+= 1
+#     el = ''.join(el)
+#     if el.count('А') <= 1 and el.count('Ц') == 2 and el.count('Л') == 0:
+#         print(c,el)
+#         break
+
+k =0 
 from itertools import product as PR
 c=0
-ln = 0
-for el in PR('ИНЬЮ' ,repeat=5):
+for el in PR('АГИЛМНОФ',repeat=5):
     c+=1
-    el= ''.join(el)
-    if el.count('И') + el.count('Ю') ==2:
-        ln = c
-print(ln)
+    el = ''.join(el)
+    if el[0] not in "Н" and el.count('О') <= 1 and c % 2 != 0:
+        k +=1
+print(k)
+        

@@ -175,3 +175,85 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #             print(A)
 #             break
 
+# def DEL(n,m):
+#     if n % m ==0:
+#         return True
+#     return False
+
+# for A in range(1000, 0, -1):
+#     f = True
+#     for x in range(1,1000):
+#                 if x < 200 or x > 300:
+#                       continue
+#                 if not (DEL(x,A) or (not DEL(x,77))):
+#                     f = False
+#                     break
+#     if f:
+#         print(A)
+#         break
+
+# def DEL(n,m):
+#     if n % m == 0: 
+#         return True
+#     return False
+
+# for A in range(1000):
+#     f = True
+#     for x in range(1,1000):
+#         if not(DEL(x,7) <= (DEL(x,4) <= (not (A + x < 173)))):
+#             f = False
+#             break
+#     if f:
+#         print(A)
+#         break   
+
+# for A in range(1000):
+#     f = True
+#     for x in range(1000):
+#         if f:
+#             for y in range(1000):
+#                 if not( (4 * x + y < A) or (x < y) or (22 <= x)): 
+#                     f = False
+#                     break
+#     if f: 
+#         print(A)
+#         break
+
+# def f(x, A):
+#     return (x & 39 == 0) or ((x & 11 == 0) <= (not(x & A ==0)))
+
+# for A in range(0, 1000):
+#     if all(f(x, A) for x in range(0,1000)):
+#         print(A)
+#         break
+
+
+
+# def f(x, y, A):
+#     return (2*x + y != 70) or (x < y) or (A<x)
+
+# for A in range(0 ,1000):
+#     if all (f(x, y,A) for x in range(0 ,1000) for y in range(0 ,1000)):
+#         print(A)
+
+
+# def D(n,m):
+#     if n % m == 0:
+#         return True
+#     return False
+
+# for A in range(1000, 0 , -1):
+#     f = True
+#     for x in range(71, 91):
+#         if not(D(x,A) or (not D(x,22))):
+#             f = False
+#             break
+#     if f:
+#         print(A)
+        
+def f(x,A):
+    return ((x & 42 != 0) and (x & 34 == 0)) <= (not(x & A == 0))
+for A in range(1000):
+    if all(f(x,A) for x in range(1000)):
+        print(A)
+        break

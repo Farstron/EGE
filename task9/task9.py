@@ -38,13 +38,24 @@
 
 # https://education.yandex.ru/ege/inf/task/5c54e314-516a-44fb-b41f-b06ffe3345af
 
-k = 0
-for s in open('task9/task9(4).txt'):
-    num = [int(x) for x in s.split()]
-    a,b,c,d = num
-    S = a + b + c + d
-    M = max(num)
-    if  S % 2 == 0 and M < S - M:
-        if (a + b == c + d) or (a + c == b + d) or (a + d== b + c):
-            k+=1
-print(k)
+# k = 0
+# for s in open('task9/task9(4).txt'):
+#     num = [int(x) for x in s.split()]
+#     a,b,c,d = num
+#     S = a + b + c + d
+#     M = max(num)
+#     if  S % 2 == 0 and M < S - M:
+#         if (a + b == c + d) or (a + c == b + d) or (a + d== b + c):
+#             k+=1
+# print(k)
+
+
+# k = 0
+# for s in open('task9/9(5).txt'):
+#     num = sorted([int(x) for x in s.split()])
+#     if len(set(num)) == 6 and ((num[-1]-num[0])**2 >= num[1]**2 + num[2]**2 + num[3]**2 + num[4]**2):
+#         k +=1
+# print(k)
+
+
+    

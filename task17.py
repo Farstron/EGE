@@ -239,13 +239,48 @@
 #         res.append(f[i] + f[i+1])
 # print(len(res), max(res))
 
-f = [int(i) for i in open ('task17/17(4).txt')]
-a = max([i for i in f if abs(i) // 10000 in range(1,10) and abs(i) % 100 == 17 and i > 0])
-res = []
-print(a)
-for i in range(len(f) - 2):
-    if (abs(f[i]) % 100 == 17) or (abs(f[i+1]) % 100 == 17) or (abs(f[i+2]) % 100 == 17):
-        if abs(f[i]) + abs(f[i+1]) + abs(f[i+2]) <= a:
-            res.append(f[i] + f[i+1] + f[i+2])
-print(len(res), min(res)) 
+# f = [int(i) for i in open ('task17/17(4).txt')]
+# a = max([i for i in f if abs(i) // 10000 in range(1,10) and abs(i) % 100 == 17 and i > 0])
+# res = []
+# print(a)
+# for i in range(len(f) - 2):
+#     if (abs(f[i]) % 100 == 17) or (abs(f[i+1]) % 100 == 17) or (abs(f[i+2]) % 100 == 17):
+#         if abs(f[i]) + abs(f[i+1]) + abs(f[i+2]) <= a:
+#             res.append(f[i] + f[i+1] + f[i+2])
+# print(len(res), min(res)) 
  
+# f = [int(i) for i in open ('task17/17(5).txt')]
+# a = max([i for i in  f if abs(i) % 100 == 25])
+# res = []
+# for i in range(len(f) - 2):
+#     c = 0
+#     tri = [f[i], f[i+1], f[i+2]]
+#     chetzn =[i for i in tri if 999 < abs(i) < 10000]
+#     s= sum(tri)
+#     if len(chetzn) <= 2 and s <= a:
+#                 res.append(s)
+# print(len(res), max(res))
+
+
+# f = [int(i) for i in open('task17/17(6).txt')]
+# a = min([i for i in f if i%1000 == 500])
+# res =[]
+# for i in range(len(f) - 2):
+#     tri = [f[i], f[i+1], f[i+2]]
+#     s = sum(tri)
+#     if ((f[i] % 2 != 0) and (f[i+1] % 2 != 0) and (f[i+2] % 2 != 0)) and s > a:
+#         res.append(s)
+# print(len(res),min(res))
+
+
+
+f = [int(x) for x in open('task17/17(7).txt')]
+a = max([x for x in f if x % 100 == 25])
+res =[]
+for x in range(len(f) - 2):
+    tri = [f[x], f[x+1], f[x+2]]
+    s = sum(tri)
+    chetzn = [x for x in tri if (999 < abs(x) < 10000)]
+    if len(chetzn) <= 2 and s <= a:
+        res.append(s)
+print(len(res), max(res))

@@ -146,16 +146,32 @@
 #         return f(x + 3, y) + f(x * 2, y) + f(x * 5, y)
 # print(f(5,115))
 
-def f(x,y):
-    if x < y:
-        return 0
-    if x == y:
-        return 1
-    if x > y:
-        return f(x - 5, y) + f((round(x/3) - 1)*3,y) + f(x % 3 == 0, y)
-print(f(103,73) * f(73,24))
+# def f(x,y):
+#     if x < y:
+#         return 0
+#     if x == y:
+#         return 1
+#     if x > y:
+#         return f(x - 5, y) + f((round(x/3) - 1)*3,y) + f(x % 3 == 0, y)
+# print(f(103,73) * f(73,24))
 
+# def f(x,y):
+#     if x > y:
+#         return 0
+#     if x == y:
+#         return 1
+#     if x < y: 
+#         return f(x + 1,y) + f(x*2,y) + f(x*3,y) 
+# print(f(2,8)*f(8,30))
 
+# def f(x,y):
+#     if x < y or x == 8:
+#         return 0
+#     if x == y:
+#         return 1
+#     if x > y:
+#         return f(x - 1,y) + f(x-4,y) + f(x // 2,y)
+# print(f(30,12)* f(12,4))
 
 
 

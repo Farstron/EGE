@@ -160,18 +160,18 @@
 # print(max(res),l)
 
 
-with open ('task24/24(10).txt') as f:
-    data = f.read()
-res = []
-l = 1
-r = 0
-for i in range(len(data)-1):
-    if data[i-1] == 'I' and data[i] == 'T' or data[i-1] == 'T' and data[i] == 'I':
-        res.append(l)
-        l=1
-    else:
-        l+=1
-print(max(res),l)
+# with open ('task24/24(10).txt') as f:
+#     data = f.read()
+# res = []
+# l = 1
+# r = 0
+# for i in range(len(data)-1):
+#     if data[i-1] == 'I' and data[i] == 'T' or data[i-1] == 'T' and data[i] == 'I':
+#         res.append(l)
+#         l=1
+#     else:
+#         l+=1
+# print(max(res),l)
 
 # with open ('task24/24(11).txt') as f:
 #     s = f.read()

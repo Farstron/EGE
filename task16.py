@@ -215,3 +215,100 @@
 # for n in range(10,6251):
 #     mem[n] = f(n,mem)
 # print((f(6250,mem) + 2 * f(6244,mem)) / f(6238,mem))
+
+
+# from sys import *
+# setrecursionlimit(100000)
+ 
+# def f(n):
+#     if n <= 8:
+#         return 1
+#     if n > 7:
+#         return n + 2 + f(n-1)
+# print(f(2024) - f(2020))
+
+# from sys import *
+# setrecursionlimit(100000)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n %2 == 0:
+#         return n + f(n - 1)
+#     if n > 1 and n % 2 != 0:
+#         return 2 * f(n - 2)
+# print(f(26))
+
+
+# from sys import * 
+# setrecursionlimit(1000000)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n > 1: 
+#         return n * f(n - 1)
+# print(f(2023) / f(2020))
+
+
+# from sys import *
+# setrecursionlimit(100000000)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return 2 * n * f(n-1)
+# print(((f(2024)//16) - f(2023))// f(2022))
+
+
+
+# from functools import *
+
+# def f(n):
+#     return (G(n-3) + 8)
+
+# @lru_cache(100)
+# def G(n):
+#     if n < 10:
+#         return 2 * n
+#     if n >= 10:
+#         return G(n - 2) + 1
+
+# for n in range(1,15546):
+#     G(n)
+# print(f(15548))
+
+
+# from functools import *
+# @lru_cache(100)
+# def f(n):
+#     if n < 10:
+#         return 3
+#     if n>= 10:
+#         return (n+4) * f(n-5)
+# for n in range(1, 257488):
+#     f(n)
+# print((f(257487)// 683 + f(257477) // 67) // f(257472))      
+
+
+# from functools import *
+# @lru_cache(100)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return n * f(n-1)
+# for n in range(1,2025):
+#     f(n)
+# print((f(2024) - f(2023)) // f(2022))
+
+# from functools import *
+# @lru_cache(100)
+# def f(n): 
+#     if n == 1:
+#         return 1
+#     if n == 2:
+#         return 2
+#     if n > 2 :
+#         return n * (n - 1) + f(n - 1) - f(n - 2)
+# for n in range(1,2025):
+#     f(n)
+# print(f(2024) + f(2020) - f(2019))

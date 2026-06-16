@@ -276,39 +276,28 @@
 #K1XXX2392
 #K123XXX92
 #K1X23XX92
-nums=[]
-for n1 in range(1,10):
-    for n2 in range(-1,10):
-        for n3 in range(-1,10):
-            for n4 in range(-1,10):
-                nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}2392'))
-                nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}23{n4 if n4 > -1 else ''}92'))
-                nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}23{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}92'))
-                nums.append(int(f'{n1}123{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}92'))
+# nums=[]
+# for n1 in range(1,10):
+#     for n2 in range(-1,10):
+#         for n3 in range(-1,10):
+#             for n4 in range(-1,10):
+#                 nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}2392'))
+#                 nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}23{n4 if n4 > -1 else ''}92'))
+#                 nums.append(int(f'{n1}1{n2 if n2 > -1 else ''}23{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}92'))
+#                 nums.append(int(f'{n1}123{n2 if n2 > -1 else ''}{n3 if n3 > -1 else ''}{n4 if n4 > -1 else ''}92'))
+# res={}
+# for el in nums:
+#     if el % 7977 == 0:
+#         res[el] = el//7977
+# print(res)
+
+
+nums = []
+for n1 in range(0,1000):
+    nums.append(int(f'32{n1}823'))
+
 res={}
 for el in nums:
-    if el % 7977 == 0:
-        res[el] = el//7977
+    if el % 123==0:
+        res[el] = el// 123
 print(res)
-
-
-def mdiv(n):
-    d = 2
-    x = n
-    pr = []
-    while d * d <= x:
-        while (x % d == 0):
-            pr.append(d)
-            x //= d
-        d += 1
-    if x > 1:
-        pr.append(x)
-    res = {1}
-    for p in pr:
-        for d in list(res):
-            res.add(d*p)
-    return sorted(res)[1:len(res)-1]
-for num in range(174457, 174505+1):
-    tmp = mdiv(num)
-    if len(tmp) == 2:
-        print(num, tmp)

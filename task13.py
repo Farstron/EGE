@@ -79,6 +79,30 @@
 # net = ip_network('68.203.243.87/255.255.224.0',0)
 # print(net[-2])
 
+# from ipaddress import *
+# net  = ip_network('172.17.167.18/255.255.240.0',0)
+# print(net[-2]) 
+
+# from ipaddress import *
+# net = ip_network('152.191.15.163/255.244.0.0',0)
+# print(net[1])
+
+# k = 0
+# from  ipaddress import *
+# num = ip_network('122.159.136.144/255.255.255.248',0)
+# for ip in num:
+#     if bin(int(ip)).count('1') % 4 != 0:
+#         k +=1
+# print(k)
+
+# k = 0 
+# from ipaddress import *
+# n = ip_network('192.168.32.160/255.255.255.240',0)
+# for i in n:
+#     if (bin(int(i))[2:]).count('1') % 2 ==0:
+#         k+=1
+# print(k)
+
 from ipaddress import *
-net  = ip_network('172.17.167.18/255.255.240.0',0)
-print(net[-2]) 
+n = ip_network('153.107.147.227/255.255.224.0',0)
+print(n[-2])

@@ -765,24 +765,94 @@
 #         res.append(N)
 # print(min(res))
 
-def Tok(num,k):
-    res=''
-    alf ={0:'0', 1:'1',2:'2'}
-    while num !=0: 
-        res = alf[num % k]+res
-        num //= k
-    return res
+# def Tok(num,k):
+#     res=''
+#     alf ={0:'0', 1:'1',2:'2'}
+#     while num !=0: 
+#         res = alf[num % k]+res
+#         num //= k
+#     return res
 
-res = []
+# res = []
+
+# for N in range(1,1000):
+#     R = Tok(N,2)
+#     s = sum(int(x) for x in R)
+#     if s % 2 == 0:
+#         R = '10' + R[2:] + '0'
+#     else:
+#         R = '11' + R[2:] + '1'
+#     a=int(R,2)
+#     if a < 35:
+#         res.append(N)
+# print(max(res))
+
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1', 2:"2"}
+#     res=''
+#     while num != 0:
+#         res=alf[num%k] +res
+#         num//=k
+#     return res
+
+# res =[]
+# for N in range(1,1000):
+#     R =Tok(N,2)
+#     if N % 3 == 0:
+#         if len(R) >= 3:
+#             R = R + R[-3:]
+#     else:
+#         a = Tok((N%3)*3,2)
+#         R = R + a
+#     r = int(R,2)
+#     if r == 127:
+#         res.append(N)
+# print(max(res))
+
+# def Tok(num,k):
+#     if num == 0:
+#         return '0'
+#     alf = {0:'0', 1:"1", 2:'2'}
+#     res = ''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num//=k
+#     return res
+
+# res = []
+
+# for N in range(1,1000):
+#     R = Tok(N,2)
+#     if N % 3 == 0:
+#         R = R + R[-3:]
+#     else:
+#         r = Tok(((N%3)-1)*3,2)
+#         R = R + r
+#     a = int(R,2)
+#     if a < 416:
+#         res.append(a)
+# print(max(res)) 
+
+
+def Tok(num, k):
+    if num == 0:
+        return '0'
+    alf = {0:'0', 1:'1', 2:'2'}
+    res=''
+    while num != 0:
+        res = alf[num % k] + res
+        num//=k
+    return res
+res =[]
 
 for N in range(1,1000):
-    R = Tok(N,2)
-    s = sum(int(x) for x in R)
-    if s % 2 == 0:
-        R = '10' + R[2:] + '0'
+    R=Tok(N,3)
+    if N % 3==0:
+        R = '1' + R + '02'
     else:
-        R = '11' + R[2:] + '1'
-    a=int(R,2)
-    if a < 35:
+        r = Tok((N%3)*4,3)
+        R = R + r
+    a = int(R,3)
+    if a < 199:
         res.append(N)
 print(max(res))

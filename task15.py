@@ -251,9 +251,26 @@ x&25 ≠ 0 → (x&9 = 0 → x&А ≠ 0)
 #     if f:
 #         print(A)
         
-def f(x,A):
-    return ((x & 42 != 0) and (x & 34 == 0)) <= (not(x & A == 0))
-for A in range(1000):
-    if all(f(x,A) for x in range(1000)):
+# def f(x,A):
+#     return ((x & 42 != 0) and (x & 34 == 0)) <= (not(x & A == 0))
+# for A in range(1000):
+#     if all(f(x,A) for x in range(1000)):
+#         print(A)
+#         break
+
+
+
+def D(n,m):
+    if n % m ==0:
+        return True
+    return False
+
+for A in range(1000, 1, -1):
+    f = True
+    for x in range(50,71):
+        if not(D(x,A) or (not D(x,15))):
+            f= False
+            break
+    if f:
         print(A)
         break

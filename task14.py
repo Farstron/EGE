@@ -598,13 +598,35 @@ x вычислите частное от деления значения ари�
 #         break 
 
 
-def Tok(num,k):
-    alf = {0:'0', 1:'1', 2:"2", 3:'3', 4:'4'}
-    res=''
-    while num != 0: 
-        res= alf[num  % k] + res
-        num //=k
-    return res
+# def Tok(num,k):
+#     alf = {0:'0', 1:'1', 2:"2", 3:'3', 4:'4'}
+#     res=''
+#     while num != 0: 
+#         res= alf[num  % k] + res
+#         num //=k
+#     return res
 
-n = Tok(4*625**1920 + 4*125**1930 - 4*25**1940 - 3*5**1950 - 1960,5)
-print(n.count('0'))
+# n = Tok(4*625**1920 + 4*125**1930 - 4*25**1940 - 3*5**1950 - 1960,5)
+# print(n.count('0'))
+
+
+# def Tok(num, k):
+#     alf = {0:'0',1:'1',2:'2',3:'3', 4:'4',5:"5",6:'6',7:'7',8:'8',9:'9'}
+#     res=''
+#     while num != 0:
+#         res = alf[num % k] + res
+#         num //= k
+#     return res
+
+# n = Tok(5*729**8 + 7*81**12 + 3**16 - 171,9)
+# print(n.count('2') + n.count('4') + n.count('6') +  n.count('8') + n.count('0')) 
+
+f = True
+for x in range(1,13):
+    a = 7*13**4 + 5*13**3 + 3*13**2 + x*13**1 + 2*13**0
+    b = 2*13**4 + x*13**3 + 1*13**2 + 7*13**1 + 3*13**0
+    res = a + b
+    if res % 12 == 0:
+        print(res//12)
+        f = False
+        break 

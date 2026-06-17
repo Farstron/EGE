@@ -312,3 +312,28 @@
 # for n in range(1,2025):
 #     f(n)
 # print(f(2024) + f(2020) - f(2019))
+
+
+# from sys import *
+# setrecursionlimit(100000)
+# def f(n):
+#     if n == 1:
+#         return 1
+#     if n > 1:
+#         return (n - 1) * f(n-1)
+
+# print((f(2024) + 2 * f(2023))//f(2022))
+
+
+from sys import *
+setrecursionlimit(100000)
+
+def f(n):
+    if n < 3:
+        return n
+    if n > 2 and n % 2 == 0:
+        return 2 * (n - 1) + f(n - 1) + 2
+    if n > 2 and n % 2 != 0:
+        return 2 * (n + 1) + f(n - 2) - 5
+
+print(f(32))

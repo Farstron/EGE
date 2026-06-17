@@ -422,13 +422,30 @@ from itertools import product as PR
 #         print(c,el)
 #         break
 
-k =0 
-from itertools import product as PR
-c=0
-for el in PR('АГИЛМНОФ',repeat=5):
-    c+=1
-    el = ''.join(el)
-    if el[0] not in "Н" and el.count('О') <= 1 and c % 2 != 0:
-        k +=1
-print(k)
+# k =0 
+# from itertools import product as PR
+# c=0
+# for el in PR('АГИЛМНОФ',repeat=5):
+#     c+=1
+#     el = ''.join(el)
+#     if el[0] not in "Н" and el.count('О') <= 1 and c % 2 != 0:
+#         k +=1
+# print(k)
         
+
+# from itertools import product as PR
+# k = 0
+# for el in PR('АГИНРТ',repeat=6):
+#     k += 1
+#     el=''.join(el)
+#     if el[0] not in "АИГ" and el.count("А") == 1 and k % 2 != 0:
+#         print(k,el)
+#         break
+
+c= 0
+from itertools import product as PR
+for el in PR('0123456',repeat=5):
+    el = ''.join(el)
+    if el[0] in '246' and el[-1] not in '012' and el.count('4') <= 1:
+        c+=1
+print(c)

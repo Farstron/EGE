@@ -329,5 +329,8 @@ q1	λ, S, q1	0, S, q1	1, L, q1
 # print(bin(800)[2:])
 # print(int('1000100000',2))
 
-print(bin(511)[2:])
-print(int('101010101',2))
+# print(bin(511)[2:])
+# print(int('101010101',2))
+
+print(bin(800)[2:])
+print(int('1000100000',2))

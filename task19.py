@@ -237,14 +237,38 @@
 # print([k for k in range(1, 59) if not f(k,1) and f (k,3)])
 # print([k for k in range(1, 59) if not f(k,2) and f (k,4)])
 
-def f(k1, k2, x):
-    if k1 + k2 >= 123:
+# def f(k1, k2, x):
+#     if k1 + k2 >= 123:
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = [f(k1 + 1, k2, x - 1), f(k1 * 2, k2, x - 1 ),f(k1, k2 + 1 , x - 1),f(k1, k2 * 2, x - 1)]
+#     return any(h) if x % 2 != 0 else all(h)
+
+# print([k for k in range(1, 110) if f(13,k,2)])
+# print([k for k in range(1, 110) if not f(13,k,1) and f(13,k,3)])
+# print([k for k in range(1, 110) if not f(13,k,2) and f(13,k,4)])
+
+
+# def f(k1,k2,x):
+#     if k1 + k2 <=  147:
+#         return x % 2 == 0
+#     if x == 0:
+#         return 0
+#     h = [f(k1 - 1 , k2, x - 1), f(k1 //2, k2, x - 1), f(k1, k2 - 1, x - 1), f(k1, k2//2, x - 1)]
+#     return any(h) if x % 2 != 0 else all(h)
+# print([k for k in range(135,301) if f(13,k,2)])
+# print([k for k in range(135,301) if not f(13,k,1) and f(13,k,3)])
+# print([k for k in range(135,301) if not f(13,k,2) and f(13,k,4)])
+
+
+def f(k1,k2,x):
+    if k1 + k2 >= 259:
         return x % 2 == 0
     if x == 0:
         return 0
-    h = [f(k1 + 1, k2, x - 1), f(k1 * 2, k2, x - 1 ),f(k1, k2 + 1 , x - 1),f(k1, k2 * 2, x - 1)]
+    h =[f(k1 + 1,k2,x-1), f(k1 * 2, k2 , x - 1), f(k1, k2 + 1, x - 1), f(k1, k2 * 2, x - 1)]
     return any(h) if x % 2 != 0 else all(h)
-
-print([k for k in range(1, 110) if f(13,k,2)])
-print([k for k in range(1, 110) if not f(13,k,1) and f(13,k,3)])
-print([k for k in range(1, 110) if not f(13,k,2) and f(13,k,4)])
+print([k for k in range(1,242) if f(17,k,2)])
+print([k for k in range(1,242) if not f(17,k,1) and f(17,k,3)])
+print([k for k in range(1,242) if not f(17,k,2) and f(17,k,4)])

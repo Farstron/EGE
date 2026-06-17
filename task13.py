@@ -103,6 +103,21 @@
 #         k+=1
 # print(k)
 
-from ipaddress import *
-n = ip_network('153.107.147.227/255.255.224.0',0)
-print(n[-2])
+# from ipaddress import *
+# n = ip_network('153.107.147.227/255.255.224.0',0)
+# print(n[-2])
+
+# from ipaddress import *
+# n = ip_network('127.204.113.250/255.255.254.0',0)
+# print(n[1])
+
+# c = 0
+# from ipaddress import *
+# n = ip_network('112.160.0.0/255.240.0.0',0)
+# for i in n:
+#     if (bin(int(i))[2:]).count('1') % 3 != 0:
+#         c +=1
+# print(c)
+
+
+

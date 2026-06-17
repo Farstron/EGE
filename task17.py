@@ -274,13 +274,35 @@
 
 
 
-f = [int(x) for x in open('task17/17(7).txt')]
-a = max([x for x in f if x % 100 == 25])
-res =[]
+# f = [int(x) for x in open('task17/17(7).txt')]
+# a = max([x for x in f if x % 100 == 25])
+# res =[]
+# for x in range(len(f) - 2):
+#     tri = [f[x], f[x+1], f[x+2]]
+#     s = sum(tri)
+#     chetzn = [x for x in tri if (999 < abs(x) < 10000)]
+#     if len(chetzn) <= 2 and s <= a:
+#         res.append(s)
+# print(len(res), max(res))
+
+# f = [int(x) for x in open('task17/17(8).txt')]
+# a= min([x for x in f if  abs(x) % 19 == 0 and x > 0])
+# res = []
+# for x in range(len(f) -1):
+#     par = [f[x], f[x+1]]
+#     s = sum(par)
+#     if s < a:
+#         res.append(abs(s))
+# print(len(res), max(res))
+
+
+res= []
+f = [int(x) for x in open('task17/17(9).txt')]
+a = sorted([x for x in f])
+
 for x in range(len(f) - 2):
-    tri = [f[x], f[x+1], f[x+2]]
-    s = sum(tri)
-    chetzn = [x for x in tri if (999 < abs(x) < 10000)]
-    if len(chetzn) <= 2 and s <= a:
-        res.append(s)
+    s = f[x]*f[x+1]*f[x+2]
+    if (f[x] > 0 and f[x+1] < 0 and f[x+2] < 0) or (f[x] < 0 and f[x+1] > 0 and f[x+2] < 0) or (f[x] < 0 and f[x+1] < 0 and f[x+2] > 0):
+        if s <= a[-1]*a[-2]:
+            res.append(f[x]+f[x+1]+f[x+2])
 print(len(res), max(res))

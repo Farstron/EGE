@@ -564,29 +564,111 @@
 # t.done()
 
 
-import turtle as t
+# import turtle as t
+# t.speed(100)
+# t.left(90)
+# l = 10
+# for i in range(2):
+#     t.forward(13*l)
+#     t.right(90)
+#     t.forward(20*l)
+#     t.right(90)
+# t.up()
+# t.forward(8*l)
+# t.right(90)
+# t.back(3*l)
+# t.left(90)
+# t.down()
+# for i in range(2):
+#     t.forward(16*l)
+#     t.right(90)
+#     t.forward(8*l)
+#     t.right(90)
+# t.up()
+# for x in range(-3,25):
+#     for y in range(25):
+#         t.goto(x*l, y*l)
+#         t.dot(5)
+# t.done()
+
+# import turtle as t
+# t.speed(100)
+# t.left(90)
+# l = 25
+# for i in range(2):
+#     t.forward(3*l)
+#     t.left(90)
+#     t.back(10*l)
+#     t.left(90)
+# t.up()
+# t.back(10*l)
+# t.right(90)
+# t.forward(8*l)
+# t.left(90)
+# t.down()
+# for i in range(2):
+#     t.forward(16*l)
+#     t.right(90)
+#     t.forward(8*l)
+#     t.right(90)
+# t.up()
+# for x in range(20):
+#     for y in range(-10,8):
+#         t.goto(x*l, y*l)
+#         t.dot(5)
+# t.done()
+
+
+# import turtle as t 
+# t.speed(100)
+# t.left(90)
+# l = 18
+# for i in range(9):
+#     t.forward(22*l)
+#     t.right(90)
+#     t.forward(6*l)
+#     t.right(90)
+# t.up()
+# t.forward(1*l)
+# t.right(90)
+# t.forward(5*l)
+# t.left(90)
+# t.down()
+# for i in range(9):
+#     t.forward(53*l)
+#     t.right(90)
+#     t.forward(75*l)
+#     t.right(90)
+# t.up()
+# for x in range(10):
+#     for y in range(22):
+#         t.goto(x*l,y*l)
+#         t.dot(5)
+# t.done()
+
+import turtle as t 
 t.speed(100)
 t.left(90)
-l = 10
+l = 18
 for i in range(2):
-    t.forward(13*l)
+    t.forward(10*l)
     t.right(90)
-    t.forward(20*l)
+    t.forward(18*l)
     t.right(90)
 t.up()
-t.forward(8*l)
+t.forward(5*l)
 t.right(90)
-t.back(3*l)
+t.forward(7*l)
 t.left(90)
 t.down()
 for i in range(2):
-    t.forward(16*l)
+    t.forward(10*l)
     t.right(90)
-    t.forward(8*l)
+    t.forward(7*l)
     t.right(90)
 t.up()
-for x in range(-3,25):
-    for y in range(25):
-        t.goto(x*l, y*l)
+for x in range(20):
+    for y in range(18):
+        t.goto(x*l,y*l)
         t.dot(5)
 t.done()
